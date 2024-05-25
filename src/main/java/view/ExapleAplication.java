@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ExapleAplication extends Application {
-
+//Base de la aplicacion.
     public static Stage currentStage;
 
 
