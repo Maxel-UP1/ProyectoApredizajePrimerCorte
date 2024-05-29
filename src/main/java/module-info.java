@@ -7,4 +7,5 @@ module com.example.ejemplojfx {
     exports view;
     exports controlers;
     opens controlers to javafx.fxml;
+    //exports controlerView;
 }

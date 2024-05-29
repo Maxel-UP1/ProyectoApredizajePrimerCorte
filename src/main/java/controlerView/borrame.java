@@ -1,4 +1,4 @@
-package logic;
+package controlerView;
 
 public class borrame {
 
