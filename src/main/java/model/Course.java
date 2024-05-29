@@ -4,16 +4,16 @@ public class Course {
 
 	private int id_Course;
 	private String name_Course;
-	private int code_Curse;
-	private int id_Teacher;
+	private int code_Curse;;
 	private int credits;
 	private int cluster;
+	private int score;
 
-	public Course(int id_Course, String name_Course, int code_Curse, int id_Teacher, int credits, int cluster) {
+	public Course(int id_Course, String name_Course, int code_Curse, int credits, int cluster, int score) {
 		this.id_Course = id_Course;
 		this.name_Course = name_Course;
 		this.code_Curse = code_Curse;
-		this.id_Teacher = id_Teacher;
+		this.score = score;
 		this.credits = credits;
 		this.cluster = cluster;
 	}
@@ -42,14 +42,6 @@ public class Course {
 		this.code_Curse = code_Curse;
 	}
 
-	public int getId_Teacher() {
-		return id_Teacher;
-	}
-
-	public void setId_Teacher(int id_Teacher) {
-		this.id_Teacher = id_Teacher;
-	}
-
 	public int getCredits() {
 		return credits;
 	}
@@ -66,10 +58,18 @@ public class Course {
 		this.cluster = cluster;
 	}
 
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	@Override
 	public String toString() {
 		return "Course{" + "id_Course=" + id_Course + ", name_Course='" + name_Course + '\'' + ", code_Curse="
-				+ code_Curse + ", id_Teacher=" + id_Teacher + ", credits=" + credits + ", cluster=" + cluster + '}';
+				+ code_Curse  + ", credits=" + credits + ", cluster=" + cluster + '}';
 	}
 
 }

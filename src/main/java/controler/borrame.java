@@ -1,4 +1,4 @@
-package controlers;
+package controler;
 
 public class borrame {
 
