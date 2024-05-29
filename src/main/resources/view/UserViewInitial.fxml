@@ -5,41 +5,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="controlerView.UserViewInitialController">
+   <Label fx:id="bienvenidoLabel" layoutX="371.0" layoutY="14.0" text="Bienvenido" />
+   <Label fx:id="NameLabel" layoutX="14.0" layoutY="44.0" text="Usuario" />
 
-<Pane fx:id="panelInicial" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-   minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21"
-   xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlerView.UserViewInitialController">
-   <children>
-      <Label fx:id="bienvenidoLabel" layoutX="422.0" layoutY="50.0" text="WELCOME" />
-      <Label fx:id="NameLabel" layoutX="609.0" layoutY="41.0" text="." />
-      <Label fx:id="matematicasLabel" layoutX="142.0" layoutY="97.0" text="Math" />
-      <Label fx:id="programacionLabel" layoutX="651.0" layoutY="102.0" text="Programming" />
-      <ComboBox fx:id="comboBoxMatematicas" layoutX="82.0" layoutY="118.0"
-         onAction="#selecDificultyMath" prefWidth="150.0" promptText="Selec" />
-      <ComboBox fx:id="comboBoxProgramación" layoutX="616.0" layoutY="119.0"
-         onAction="#selecDificultyProgramming" prefWidth="150.0" promptText="Selec" />
-      <Button fx:id="goBtn" layoutX="435.0" layoutY="116.0" mnemonicParsing="false"
-         onAction="#searchCourse" text="Go!" />
-      <TableView layoutX="14.0" layoutY="194.0" prefHeight="200.0" prefWidth="422.0">
-         <columns>
-            <TableColumn fx:id="curseMathColumb" prefWidth="75.0" text="Curse" />
-            <TableColumn fx:id="descriptionMathColumb" prefWidth="241.60003662109375"
-               text="Description" />
-            <TableColumn fx:id="itrScoreMathColumb" prefWidth="135.99993896484375" text="ItrScore" />
-         </columns>
-      </TableView>
-      <Button fx:id="sendbtn" layoutX="431.0" layoutY="416.0" mnemonicParsing="false"
-         onAction="#sendTree" text="send" />
-      <TableView layoutX="472.0" layoutY="194.0" prefHeight="200.0" prefWidth="422.0">
-         <columns>
-            <TableColumn fx:id="curseProgrammingColumb1" prefWidth="75.0" text="Curse" />
-            <TableColumn fx:id="descriptionProgrammingColumb1" prefWidth="241.60003662109375"
-               text="Description" />
-            <TableColumn fx:id="itrScoreProgrammingColumb1" prefWidth="135.99993896484375"
-               text="ItrScore" />
-         </columns>
-      </TableView>
-   </children>
-</Pane>
+   <Label fx:id="matematicasLabel" layoutX="14.0" layoutY="74.0" text="Matemáticas" />
+   <ComboBox fx:id="comboBoxMatematicas" layoutX="100.0" layoutY="70.0" />
+   <TableView fx:id="mathTableView" layoutX="14.0" layoutY="104.0" prefHeight="200.0" prefWidth="382.0">
+      <columns>
+         <TableColumn fx:id="curseMathColumn" text="Curso" />
+         <TableColumn fx:id="descriptionMathColumn" prefWidth="231.0" text="Descripción" />
+         <TableColumn fx:id="itrScoreMathColumn" prefWidth="70.0" text="Puntuación" />
+      </columns>
+   </TableView>
+
+   <Label fx:id="programacionLabel" layoutX="398.0" layoutY="74.0" text="Programación" />
+   <ComboBox fx:id="comboBoxProgramacion" layoutX="487.0" layoutY="70.0" />
+   <TableView fx:id="programmingTableView" layoutX="442.0" layoutY="104.0" prefHeight="200.0" prefWidth="348.0">
+      <columns>
+         <TableColumn fx:id="curseProgrammingColumn" text="Curso" />
+         <TableColumn fx:id="descriptionProgrammingColumn" prefWidth="197.0" text="Descripción" />
+         <TableColumn fx:id="itrScoreProgrammingColumn" prefWidth="70.0" text="Puntuación" />
+      </columns>
+   </TableView>
+
+   <Button fx:id="goBtn" layoutX="14.0" layoutY="320.0" onAction="#searchCourse" text="Buscar" />
+   <Button fx:id="sendbtn" layoutX="100.0" layoutY="320.0" onAction="#sendTree" text="Enviar" />
+</AnchorPane>
