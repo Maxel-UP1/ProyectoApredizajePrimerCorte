@@ -68,8 +68,8 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course{" + "id_Course=" + id_Course + ", name_Course='" + name_Course + '\'' + ", code_Curse="
-				+ code_Curse  + ", credits=" + credits + ", cluster=" + cluster + '}';
+		return "Course: " + "id : " + id_Course + " Name : '" + name_Course + '\'' + ", Code: "
+				+ code_Curse  + " credits: " + credits + " cluster: " + cluster  + "\n";
 	}
 
 }
