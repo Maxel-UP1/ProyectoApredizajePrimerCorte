@@ -6,19 +6,17 @@ public class Student {
 	private String name_student;
 	private String mail_student;
 	private int phone_student;
-	private String address_student;
 	
 	public Student(){
 	super();
 	}
 
-	public Student(int id_student, String name_student, String mail_student, int phone_student,
-			String address_student) {
+	public Student(int id_student, String name_student, String mail_student, int phone_student) {
 		this.id_student = id_student;
 		this.name_student = name_student;
 		this.mail_student = mail_student;
 		this.phone_student = phone_student;
-		this.address_student = address_student;
+
 	}
 
 	public int getId_student() {
@@ -53,18 +51,11 @@ public class Student {
 		this.phone_student = phone_student;
 	}
 
-	public String getAddress_student() {
-		return address_student;
-	}
-
-	public void setAddress_student(String address_student) {
-		this.address_student = address_student;
-	}
 
 	@Override
 	public String toString() {
 		return "Student{" + "id_student=" + id_student + ", name_student='" + name_student + '\'' + ", mail_student='"
-				+ mail_student + '\'' + ", phone_student=" + phone_student + ", address_student='" + address_student
+				+ mail_student + '\'' + ", phone_student=" + phone_student
 				+ '\'' + '}';
 	}
 
