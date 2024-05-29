@@ -9,14 +9,6 @@ public class BinarySearchTree {
 
     Node<Course> root;
 
-    /*
-    private int numeroElementos = 0;
-    private int numeroBusquedas = 0;
-    private int numeroIteracionesTotal = 0;
-    private int numeroIteracionesUltimaBusqueda = 0;
-    */
-
-
     public BinarySearchTree() {
         Node<Course> root = null;
     }
