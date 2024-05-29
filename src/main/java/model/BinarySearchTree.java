@@ -3,6 +3,7 @@ package model;
 //import  model.Node;
 
 
+import java.util.ArrayList;
 
 public class BinarySearchTree {
 
@@ -41,6 +42,19 @@ public class BinarySearchTree {
         return current;
     }
 
+    public ArrayList<Course> inorder() {
+        ArrayList<Course> list = new ArrayList<>();
+        inorderRecursive(root, list);
+        return list;
+    }
+
+    public void inorderRecursive(Node<Course> current, ArrayList<Course> list) {
+        if (current != null) {
+            inorderRecursive(current.getLeft(), list);
+            list.add(current.getValue());
+            inorderRecursive(current.getRight(), list);
+        }
+    }
 
 
 
