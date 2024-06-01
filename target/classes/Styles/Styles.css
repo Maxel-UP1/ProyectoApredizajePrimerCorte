@@ -1,0 +1,55 @@
+/* Styles.css */
+
+/* Pane */
+#panelInicial {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Labels */
+#bienvenidoLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+#NameLabel {
+    -fx-font-size: 20px;
+    -fx-text-fill: #34495e;
+}
+
+#matematicasLabel, #programacionLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #16a085;
+}
+
+/* ComboBoxes */
+#comboBoxMatematicas, #comboBoxProgramación {
+    -fx-font-size: 14px;
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+}
+
+/* Buttons */
+#goBtn, #sendbtn {
+    -fx-font-size: 14px;
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#goBtn:hover, #sendbtn:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* TableViews */
+#mathTableView, #programmingTableView {
+    -fx-font-size: 14px;
+    -fx-background-color: #ecf0f1;
+}
+
+#curseMathColumb, #descriptionMathColumb, #itrScoreMathColumb,
+#curseProgrammingColumb1, #descriptionProgrammingColumb1, #itrScoreProgrammingColumb1 {
+    -fx-alignment: CENTER_LEFT;
+}
