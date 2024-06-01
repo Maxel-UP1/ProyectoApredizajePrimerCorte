@@ -3,9 +3,14 @@ module com.example.ejemplojfx {
     requires javafx.fxml;
     requires com.google.gson;
 
-
     opens view to javafx.fxml;
+    opens controler to javafx.fxml;
+    opens controlerView to javafx.fxml;
+
     exports view;
-    exports controlers;
-    opens controlers to javafx.fxml;
+    exports controler;
+    exports controlerView;
+    exports model;
+
+    // Si tienes otros paquetes que necesitas abrir o exportar, agrégalos aquí.
 }
