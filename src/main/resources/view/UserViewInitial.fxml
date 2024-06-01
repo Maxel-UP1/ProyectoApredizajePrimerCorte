@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="controlerView.UserViewInitialController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
    <Label fx:id="bienvenidoLabel" layoutX="371.0" layoutY="14.0" text="Bienvenido" />
    <Label fx:id="NameLabel" layoutX="14.0" layoutY="44.0" text="Usuario" />
 

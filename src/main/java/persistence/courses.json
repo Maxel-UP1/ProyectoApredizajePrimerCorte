@@ -1,0 +1,122 @@
+[
+  {
+    "id_Course": 1,
+    "name_Course": "Precalculus",
+    "code_Curse": 100,
+    "credits": 3,
+    "cluster": 1,
+    "score": 1,
+    "description": "This course covers the basic concepts of algebra and trigonometry needed for calculus.",
+    "science": "MATH"
+  },
+  {
+    "id_Course": 2,
+    "name_Course": "Calculus I",
+    "code_Curse": 101,
+    "credits": 4,
+    "cluster": 1,
+    "score": 2,
+    "description": "This course introduces the concepts of limits, derivatives, and integrals.",
+    "science": "MATH"
+  },
+  {
+    "id_Course": 3,
+    "name_Course": "Calculus II",
+    "code_Curse": 102,
+    "credits": 4,
+    "cluster": 2,
+    "score": 3,
+    "description": "This course covers techniques of integration, infinite series, and basic differential equations.",
+    "science": "MATH"
+  },
+  {
+    "id_Course": 4,
+    "name_Course": "Calculus III",
+    "code_Curse": 103,
+    "credits": 4,
+    "cluster": 3,
+    "score": 4,
+    "description": "This course includes multivariable calculus, multiple integrals, and vector theorems.",
+    "science": "MATH"
+  },
+  {
+    "id_Course": 5,
+    "name_Course": "Calculus IV",
+    "code_Curse": 401,
+    "credits": 4,
+    "cluster": 4,
+    "score": 5,
+    "description": "This course addresses advanced topics in calculus, such as Fourier analysis and partial differential equations.",
+    "science": "MATH"
+  },
+  {
+    "id_Course": 6,
+    "name_Course": "Numerical Methods",
+    "code_Curse": 402,
+    "credits": 4,
+    "cluster": 6,
+    "score": 90,
+    "description": "This course teaches numerical techniques for solving equations and calculus problems.",
+    "science": "MATH"
+  },
+  {
+    "id_Course": 7,
+    "name_Course": "Introduction to Programming",
+    "code_Curse": 200,
+    "credits": 3,
+    "cluster": 1,
+    "score": 1,
+    "description": "Basic programming concepts using an easy-to-learn programming language.",
+    "science": "PROGRAMMING"
+  },
+  {
+    "id_Course": 8,
+    "name_Course": "Programming Fundamentals",
+    "code_Curse": 201,
+    "credits": 3,
+    "cluster": 1,
+    "score": 2,
+    "description": "Introduction to programming logic and basic algorithms.",
+    "science": "PROGRAMMING"
+  },
+  {
+    "id_Course": 9,
+    "name_Course": "Object-Oriented Programming",
+    "code_Curse": 202,
+    "credits": 4,
+    "cluster": 2,
+    "score": 3,
+    "description": "Programming using object-oriented concepts.",
+    "science": "PROGRAMMING"
+  },
+  {
+    "id_Course": 10,
+    "name_Course": "Data Structures",
+    "code_Curse": 203,
+    "credits": 4,
+    "cluster": 2,
+    "score": 4,
+    "description": "Study of fundamental data structures and their applications.",
+    "science": "PROGRAMMING"
+  },
+  {
+    "id_Course": 11,
+    "name_Course": "Web Application Development",
+    "code_Curse": 204,
+    "credits": 4,
+    "cluster": 3,
+    "score": 5,
+    "description": "Development of web applications using modern technologies.",
+    "science": "PROGRAMMING"
+  },
+  {
+    "id_Course": 12,
+    "name_Course": "Artificial Intelligence",
+    "code_Curse": 205,
+    "credits": 4,
+    "cluster": 3,
+    "score": 6,
+    "description": "Introduction to concepts and techniques of artificial intelligence.",
+    "science": "PROGRAMMING"
+  }
+]

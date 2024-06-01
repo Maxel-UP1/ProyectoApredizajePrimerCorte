@@ -1,34 +1,34 @@
 package controler;
 
+import com.google.gson.reflect.TypeToken;
 import model.Course;
+import persistence.JsonStorageUtilities;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CourseController {
 
+
+    private JsonStorageUtilities jsonStorageUtilities;
     private ArrayList<Course> courseList;
+
+    private static  final Type COUSERTYPE   = new TypeToken<List<Course>>(){}.getType();
 
     public CourseController() {
         courseList = new ArrayList<>();
+        jsonStorageUtilities = new JsonStorageUtilities();
     }
 
     // Cursos precargados en memoria
-    public void loadCourses() {
-        // Calculus Courses
-        addCourse(1, "Precalculus", 100, 3, 1, 1, "This course covers the basic concepts of algebra and trigonometry needed for calculus.", "MATH");
-        addCourse(2, "Calculus I", 101, 4, 1, 2, "This course introduces the concepts of limits, derivatives, and integrals.","MATH");
-        addCourse(3, "Calculus II", 102, 4, 2, 3, "This course covers techniques of integration, infinite series, and basic differential equations.","MATH");
-        addCourse(4, "Calculus III", 103, 4, 3, 4, "This course includes multivariable calculus, multiple integrals, and vector theorems.","MATH");
-        addCourse(5, "Calculus IV", 401, 4, 4, 5, "This course addresses advanced topics in calculus, such as Fourier analysis and partial differential equations.","MATH");
-        addCourse(6, "Numerical Methods", 402, 4, 6, 90, "This course teaches numerical techniques for solving equations and calculus problems.","MATH");
+    public void loadCoursesReadFile(String nameFile) {
 
-        // Programming Courses
-        addCourse(7, "Introduction to Programming", 200, 3, 1, 1, "Basic programming concepts using an easy-to-learn programming language.", "PROGRAMMING");
-        addCourse(8, "Programming Fundamentals", 201, 3, 1, 2, "Introduction to programming logic and basic algorithms.","PROGRAMMING");
-        addCourse(9, "Object-Oriented Programming", 202, 4, 2, 3, "Programming using object-oriented concepts.","PROGRAMMING");
-        addCourse(10, "Data Structures", 203, 4, 2, 4, "Study of fundamental data structures and their applications.","PROGRAMMING");
-        addCourse(11, "Web Application Development", 204, 4, 3, 5, "Development of web applications using modern technologies.","PROGRAMMING");
-        addCourse(12, "Artificial Intelligence", 205, 4, 3, 6, "Introduction to concepts and techniques of artificial intelligence.","PROGRAMMING");
+        List<Course> coursesList = jsonStorageUtilities.readContentFromFile(nameFile , COUSERTYPE);
+        //Convertir la lista de cursos  a un ArrayList<Course>, nuevo array poruqe se llama una vez
+        this.courseList = new ArrayList<>(coursesList);
+
+
     }
 
     public void addCourse(int id_Course, String name_Course, int code_Curse, int credits, int cluster, int score, String description, String science) {
@@ -39,4 +39,10 @@ public class CourseController {
     public ArrayList<Course> getCourseList() {
         return courseList;
     }
+
+    public void setCourseList(ArrayList<Course> courseList) {
+        this.courseList = courseList;
+    }
+
+
 }

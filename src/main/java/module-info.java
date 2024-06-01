@@ -6,6 +6,7 @@ module com.example.ejemplojfx {
     opens view to javafx.fxml;
     opens controler to javafx.fxml;
     opens controlerView to javafx.fxml;
+    opens model to com.google.gson; // Esto abre el paquete model para Gson
 
     exports view;
     exports controler;

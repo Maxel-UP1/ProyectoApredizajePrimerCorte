@@ -15,13 +15,9 @@ public class JsonStorageUtilities {
     private static final String EXTENSION = ".json";
 
     public JsonStorageUtilities(){
-        //El gson esta inicializado asi para que se escriba en cascada y no en una misma linea
+
         gson = new GsonBuilder().setPrettyPrinting().create();
-        //Esto es para que reconozca siempre el contenido del archivo, ya que si no lo hacemos asi
-        //cuando se agregue algo nuevo se va a sobreescribir
-        //readContentFromFile();
-        //readPersons("people");
-        ///readAccounts("accounts");
+
     }
 
     public <T> void saveDataToFile(List<T> dataList, String fileName, Type type) {
@@ -40,12 +36,11 @@ public class JsonStorageUtilities {
         List<T> dataList = new ArrayList<>();
 
         File file = new File( FILEPATH + fileName + EXTENSION);
+
         if (!file.exists()) {
-            System.out.println("hola");
             return null;
         }
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
-            dataList.clear();
             dataList = gson.fromJson(bufferedReader, type);
         } catch (IOException e) {
             e.printStackTrace();

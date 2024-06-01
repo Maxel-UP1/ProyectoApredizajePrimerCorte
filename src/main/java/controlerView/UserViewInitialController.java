@@ -10,7 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Course;
 
 public class UserViewInitialController {
-    private CourseController courseController = new CourseController();
+    private CourseController courseController;
 
     @FXML
     private Label bienvenidoLabel;
@@ -50,9 +50,16 @@ public class UserViewInitialController {
     private ObservableList<Course> mathCourses;
     private ObservableList<Course> programmingCourses;
 
+
     public UserViewInitialController() {
-        // Asegúrate de cargar los cursos al crear el controlador
-        courseController.loadCourses();
+
+    }
+
+
+    public UserViewInitialController(CourseController courseController) {
+        this.courseController = courseController;
+        // cargar cursos
+        courseController.loadCoursesReadFile("courses");
     }
 
     @FXML
@@ -137,6 +144,9 @@ public class UserViewInitialController {
     @FXML
     public void sendTree(ActionEvent actionEvent) {
         // Implementar funcionalidad para enviar datos
+
+
+
     }
 
     private boolean matchesDifficulty(Course course, String difficulty) {
