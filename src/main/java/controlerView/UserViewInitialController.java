@@ -58,8 +58,6 @@ public class UserViewInitialController {
 
     public UserViewInitialController(CourseController courseController) {
         this.courseController = courseController;
-        // cargar cursos
-        courseController.loadCoursesReadFile("courses");
     }
 
     @FXML
