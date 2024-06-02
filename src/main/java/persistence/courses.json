@@ -118,5 +118,15 @@
     "score": 6,
     "description": "Introduction to concepts and techniques of artificial intelligence.",
     "science": "PROGRAMMING"
+  },
+  {
+    "id": 100,
+    "name": "PRUEBA",
+    "code": 101,
+    "credits": 3,
+    "cluster": 1,
+    "score": 5,
+    "description": "DDD de matematicas",
+    "science": "Ciencias Exactas"
   }
 ]

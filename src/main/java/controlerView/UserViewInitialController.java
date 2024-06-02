@@ -5,9 +5,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Course;
+
+import java.io.IOException;
 
 public class UserViewInitialController {
     private CourseController courseController;
@@ -47,8 +53,15 @@ public class UserViewInitialController {
     @FXML
     private TableView<Course> programmingTableView;
 
+
+    @FXML
+    private Label helloLabel;
+
     private ObservableList<Course> mathCourses;
     private ObservableList<Course> programmingCourses;
+
+
+
 
 
     public UserViewInitialController() {
@@ -159,4 +172,63 @@ public class UserViewInitialController {
                 return true;
         }
     }
+
+    @FXML
+    private void sendTree() {
+        sendTree(null);
+    }
+
+    @FXML
+    private void guardarCurso(ActionEvent event) {
+        try {
+            // Cargar el archivo FXML del panel de saludo
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CoursePanel.fxml"));
+            Parent root = loader.load();
+
+            // Crear una nueva escena con el panel de saludo
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void guardarProfesor(ActionEvent event) {
+        try {
+            // Cargar el archivo FXML del panel de saludo
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TeacherPanel.fxml"));
+            Parent root = loader.load();
+
+            // Crear una nueva escena con el panel de saludo
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void guardarEstudiante(ActionEvent event) {
+        try {
+            // Cargar el archivo FXML del panel de saludo
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/StudentPanel.fxml"));
+            Parent root = loader.load();
+
+            // Crear una nueva escena con el panel de saludo
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
