@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class UserViewInitial extends Application {
     private CourseController courseController = new CourseController();
-
+    int a;
     public static Stage currentStage;
 
     public  UserViewInitial( ){
