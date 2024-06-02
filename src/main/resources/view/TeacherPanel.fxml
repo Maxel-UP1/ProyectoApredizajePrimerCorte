@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="331.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="331.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlerView.TeacherViewController">
       <Label layoutX="122.0" layoutY="113.0" text="Ingrese Nombre Profesor" />
       <Label layoutX="122.0" layoutY="148.0" text="Ingrese Correo" />
       <Label layoutX="122.0" layoutY="191.0" text="Ingrese Telefono" />
