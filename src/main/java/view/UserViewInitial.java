@@ -37,7 +37,7 @@ public class UserViewInitial extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 900, 500);
 
-        stage.setTitle("Finanzas GYM Arsenal");
+        stage.setTitle("Aprendizaje Activo UP");
         stage.setScene(scene);
         stage.show();
     }

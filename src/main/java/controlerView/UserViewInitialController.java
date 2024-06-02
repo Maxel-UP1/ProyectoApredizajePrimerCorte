@@ -63,11 +63,11 @@ public class UserViewInitialController {
     @FXML
     public void initialize() {
         // Configurar las columnas de la tabla
-        curseMathColumn.setCellValueFactory(new PropertyValueFactory<>("name_Course"));
+        curseMathColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionMathColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         itrScoreMathColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
 
-        curseProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("name_Course"));
+        curseProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         itrScoreProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
 
