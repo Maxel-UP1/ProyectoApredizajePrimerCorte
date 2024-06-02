@@ -22,7 +22,6 @@ public class UserViewInitial extends Application {
     public void start(Stage stage) throws IOException {
         //cargar la persistencia (cursos)
         courseController.loadCoursesReadFile("courses");
-        //courseController.chargeCoursesReadFile("courses");
 
         //incializa los controladores
         UserViewInitial  UserViewInitial = new UserViewInitial();

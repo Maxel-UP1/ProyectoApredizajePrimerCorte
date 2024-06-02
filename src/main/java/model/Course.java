@@ -2,19 +2,20 @@ package model;
 
 public class Course {
 
-	private int id_Course;
-	private String name_Course;
-	private int code_Curse;
+	private int id;
+	private String name;
+	private int code;
 	private int credits;
 	private int cluster;
 	private int score;
 	private String description;
 	private String science;
 
-	public Course(int id_Course, String name_Course, int code_Curse, int credits, int cluster, int score, String description, String science) {
-		this.id_Course = id_Course;
-		this.name_Course = name_Course;
-		this.code_Curse = code_Curse;
+
+	public Course(int id, String name, int code, int credits, int cluster, int score, String description, String science) {
+		this.id = id;
+		this.name = name;
+		this.code = code;
 		this.credits = credits;
 		this.cluster = cluster;
 		this.score = score;
@@ -22,44 +23,77 @@ public class Course {
 		this.science = science;
 	}
 
-	public int getId_Course() {
-		return id_Course;
+
+	public String getName() {
+		return name;
 	}
 
-	public String getName_Course() {
-		return name_Course;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getCode_Curse() {
-		return code_Curse;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
 	}
 
 	public int getCredits() {
 		return credits;
 	}
 
+	public void setCredits(int credits) {
+		this.credits = credits;
+	}
+
 	public int getCluster() {
 		return cluster;
+	}
+
+	public void setCluster(int cluster) {
+		this.cluster = cluster;
 	}
 
 	public int getScore() {
 		return score;
 	}
 
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	public String getDescription() {
 		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getScience() {
 		return science;
 	}
 
+	public void setScience(String science) {
+		this.science = science;
+	}
+
 	@Override
 	public String toString() {
 		return "Course{" +
-				"id_Course=" + id_Course +
-				", name_Course='" + name_Course + '\'' +
-				", code_Curse=" + code_Curse +
+				"id_Course=" + id +
+				", name_Course='" + name + '\'' +
+				", code_Curse=" + code +
 				", credits=" + credits +
 				", cluster=" + cluster +
 				", score=" + score +
