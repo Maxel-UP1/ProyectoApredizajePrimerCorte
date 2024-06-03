@@ -230,9 +230,12 @@ public class UserViewInitialController {
     @FXML
     public void sendTree(ActionEvent actionEvent) {
 
+        System.out.println("---------------------------------------------------------------------------------------");
+        courseController.assignCredits(courseController.getCourseList());
         for(Course course : courseController.getCourseList()) {
-            System.out.println(course.getName());
-            System.out.println(course.getInterest());
+            System.out.println("nombre del curso-->"+course.getName());
+            System.out.println("interes-->"+course.getInterest());
+            System.out.println("creditos-->"+ course.getCredits());
         }
         // Implementar funcionalidad para enviar datos
     }

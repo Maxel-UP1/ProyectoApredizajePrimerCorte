@@ -5,8 +5,7 @@ import model.Course;
 import persistence.JsonStorageUtilities;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CourseController {
 
@@ -21,6 +20,52 @@ public class CourseController {
         jsonStorageUtilities = new JsonStorageUtilities();
     }
 
+
+    // metodo de carga creditos a los cursosssss////////////////////////////////////////////
+    // Método para asignar créditos a una lista de cursos combinando score e interés y evitando repeticiones por science
+    public void assignCredits(ArrayList<Course> courses) {
+        HashMap<String, HashSet<Integer>> assignedCredits = new HashMap<>();
+
+        for (Course course : courses) {
+            String science = course.getScience();
+            int score = course.getScore();
+            int interest = course.getInterest();
+            int credits = calculateCredits(score, interest, assignedCredits.getOrDefault(science, new HashSet<>()));
+
+            // Ensure no duplicate credits within the same science
+            while (assignedCredits.getOrDefault(science, new HashSet<>()).contains(credits)) {
+                credits++;
+            }
+
+            course.setCredits(credits);
+            assignedCredits.computeIfAbsent(science, k -> new HashSet<>()).add(credits);
+        }
+    }
+
+    private int calculateCredits(int score, int interest, HashSet<Integer> existingCredits) {
+        // Base credits influenced by both score and interest
+        int baseCredits = score * 2;  // Higher score gives a higher base
+
+        // Adjust credits more significantly based on interest
+        int adjustment = 0;
+        if (interest == 5) {
+            adjustment = -5; // High interest, decrease credits significantly
+        } else if (interest == 3) {
+            adjustment = -2;  // Medium interest, no adjustment
+        } else if (interest == 1) {
+            adjustment = 5;  // Low interest, increase credits significantly
+        }
+
+        int credits = baseCredits + adjustment;
+
+        // Adjust if already assigned, ensuring we cover a broader range
+        while (existingCredits.contains(credits)) {
+            credits++;
+        }
+
+        return credits;
+    }
+/////
     // Cursos precargados en memoria
     public void loadCoursesReadFile(String nameFile) {
 
