@@ -50,7 +50,7 @@ public class CourseControllerView {
 
 
     public void addCourse(ActionEvent actionEvent) {
-        String name = utilities.cleanNames(lblName.getText());
+        String name = lblName.getText();
         String dificulty = utilities.cleanNames(lblDificulty.getText());
         String description = utilities.cleanNames(lblDescription.getText());
         int id = utilities.generateRandomNumber(10, 250);
@@ -63,7 +63,7 @@ public class CourseControllerView {
         try {
             int difficulty = Integer.parseInt(dificulty);
             if (difficulty > 6 || difficulty < 0) {
-                lblReturnInfo.setText("La dificultad no puede ser mayor a 10 o menor a 0");
+                lblReturnInfo.setText("La dificultad no puede ser mayor a 6 o menor a 0");
                 return;
             }
         } catch (NumberFormatException e) {
@@ -103,7 +103,7 @@ public class CourseControllerView {
         String courseName = jp.showInputDialog(null, "Ingrese el nombre del curso a eliminar:", "Eliminar Curso", JOptionPane.QUESTION_MESSAGE);
 
         if (courseName != null) {
-            courseName = utilities.cleanNames(courseName);
+
             if (courseController.validaNameCourse(courseName)) {
                 courseController.deleteCourseByName(courseName);
                 lblReturnInfo.setStyle("-fx-text-fill: green;");
