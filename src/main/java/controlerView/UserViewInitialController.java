@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 import model.Course;
 
 public class UserViewInitialController {
@@ -34,13 +35,16 @@ public class UserViewInitialController {
     @FXML
     private TableColumn<Course, Integer> itrScoreMathColumn;
     @FXML
-    private Button sendbtn;
+    private TableColumn<Course, String> interestMathComboBoxColumn;
+
     @FXML
     private TableColumn<Course, String> curseProgrammingColumn;
     @FXML
     private TableColumn<Course, String> descriptionProgrammingColumn;
     @FXML
     private TableColumn<Course, Integer> itrScoreProgrammingColumn;
+    @FXML
+    private TableColumn<Course, String> interestProgrammingComboBoxColumn;
 
     @FXML
     private TableView<Course> mathTableView;
@@ -50,11 +54,7 @@ public class UserViewInitialController {
     private ObservableList<Course> mathCourses;
     private ObservableList<Course> programmingCourses;
 
-
-    public UserViewInitialController() {
-
-    }
-
+    public UserViewInitialController() {}
 
     public UserViewInitialController(CourseController courseController) {
         this.courseController = courseController;
@@ -62,11 +62,12 @@ public class UserViewInitialController {
 
     @FXML
     public void initialize() {
-        // Configurar las columnas de la tabla
+        // Configurar las columnas de la tabla de matemáticas
         curseMathColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionMathColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         itrScoreMathColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
 
+        // Configurar las columnas de la tabla de programación
         curseProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         itrScoreProgrammingColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
@@ -89,8 +90,95 @@ public class UserViewInitialController {
         programmingTableView.setItems(programmingCourses);
 
         // Configurar los ComboBox con opciones de dificultad
-        comboBoxMatematicas.setItems(FXCollections.observableArrayList("Beginner", "Intermediate", "Advanced"));
-        comboBoxProgramacion.setItems(FXCollections.observableArrayList("Beginner", "Intermediate", "Advanced"));
+        comboBoxMatematicas.setItems(FXCollections.observableArrayList("Principiante", "Intermedio", "Avanzado"));
+        comboBoxProgramacion.setItems(FXCollections.observableArrayList("Principiante", "Intermedio", "Avanzado"));
+
+        // Configurar las columnas interestComboBoxColumn con un ComboBox para matemáticas
+        interestMathComboBoxColumn.setCellFactory(new Callback<TableColumn<Course, String>, TableCell<Course, String>>() {
+            @Override
+            public TableCell<Course, String> call(TableColumn<Course, String> param) {
+                return new TableCell<Course, String>() {
+                    private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
+
+                    {
+                        comboBox.setOnAction(event -> {
+
+                            switch (comboBox.getSelectionModel().getSelectedIndex()) {
+                                case 0:
+                                    getTableView().getItems().get(getIndex()).setInterest(5);
+                                    System.out.println("Muy interesado");
+                                    break;
+                                case 1:
+                                    getTableView().getItems().get(getIndex()).setInterest(3);
+                                    System.out.println("Interesado");
+                                    break;
+                                case 2:
+                                    getTableView().getItems().get(getIndex()).setInterest(1);
+                                    System.out.println("Poco interesado");
+                                    break;
+                            }
+
+                        });
+                    }
+
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(comboBox);
+                            comboBox.getSelectionModel().select(item);
+                        }
+                    }
+                };
+            }
+        });
+
+        // Configurar las columnas interestComboBoxColumn con un ComboBox para programación
+        interestProgrammingComboBoxColumn.setCellFactory(new Callback<TableColumn<Course, String>, TableCell<Course, String>>() {
+            @Override
+            public TableCell<Course, String> call(TableColumn<Course, String> param) {
+                return new TableCell<Course, String>() {
+                    private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
+
+                    {
+                        comboBox.setOnAction(event -> {
+                           switch (comboBox.getSelectionModel().getSelectedIndex()) {
+                               case 0:
+                                   getTableView().getItems().get(getIndex()).setInterest(5);
+                                   System.out.println("Muy interesado");
+                                   break;
+                               case 1:
+                                   getTableView().getItems().get(getIndex()).setInterest(3);
+                                   System.out.println("Interesado");
+                                   break;
+                               case 2:
+                                   getTableView().getItems().get(getIndex()).setInterest(1);
+                                      System.out.println("Poco interesado");
+                                   break;
+                           }
+
+                        });
+                    }
+
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(comboBox);
+                            comboBox.getSelectionModel().select(item);
+                        }
+                    }
+                };
+            }
+        });
+
+        // Añadir columnas a las tablas
+        mathTableView.getColumns().add(interestMathComboBoxColumn);
+        programmingTableView.getColumns().add(interestProgrammingComboBoxColumn);
     }
 
     @FXML
@@ -141,20 +229,22 @@ public class UserViewInitialController {
 
     @FXML
     public void sendTree(ActionEvent actionEvent) {
+
+        for(Course course : courseController.getCourseList()) {
+            System.out.println(course.getName());
+            System.out.println(course.getInterest());
+        }
         // Implementar funcionalidad para enviar datos
-
-
-
     }
 
     private boolean matchesDifficulty(Course course, String difficulty) {
         switch (difficulty) {
-            case "Beginner":
-                return course.getCluster() == 1;
-            case "Intermediate":
-                return course.getCluster() == 2 || course.getCluster() == 3;
-            case "Advanced":
-                return course.getCluster() >= 4;
+            case "Principiante":
+                return course.getScore() == 1|| course.getScore() == 2;
+            case "Intermedio":
+                return course.getScore() == 3 || course.getScore() == 4;
+            case "Avanzado":
+                return course.getScore() >= 5;
             default:
                 return true;
         }

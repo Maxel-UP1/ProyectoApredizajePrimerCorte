@@ -35,7 +35,7 @@ public class UserViewInitial extends Application {
 
         fxmlLoader.setController(controller);
 
-        Scene scene = new Scene(fxmlLoader.load(), 900, 500);
+        Scene scene = new Scene(fxmlLoader.load());
 
         stage.setTitle("Aprendizaje Activo UP");
         stage.setScene(scene);
