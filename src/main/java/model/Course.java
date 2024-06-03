@@ -10,6 +10,7 @@ public class Course {
 	private int score;
 	private String description;
 	private String science;
+	private int interest;
 
 
 	public Course(int id, String name, int code, int credits, int cluster, int score, String description, String science) {
@@ -21,8 +22,16 @@ public class Course {
 		this.score = score;
 		this.description = description;
 		this.science = science;
+
 	}
 
+	public int getInterest() {
+		return interest;
+	}
+
+	public void setInterest(int interest) {
+		this.interest = interest;
+	}
 
 	public String getName() {
 		return name;
