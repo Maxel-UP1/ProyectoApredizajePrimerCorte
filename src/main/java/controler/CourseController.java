@@ -31,6 +31,11 @@ public class CourseController {
 
     }
 
+    public void readCourses(String nameFile) {
+        List<Course> coursesList = jsonStorageUtilities.readContentFromFile(nameFile , COUSERTYPE);
+        //Convertir la lista de cursos  a un ArrayList<Course>, nuevo array poruqe se llama una vez
+        this.courseList = new ArrayList<>(coursesList);
+    }
 
     public void writeFileReading(String nameFile, Course course){
         List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile(nameFile , COUSERTYPE);
@@ -97,6 +102,7 @@ public class CourseController {
 
 
     public ArrayList<Course> getCourseList() {
+        readCourses("courses");
         return courseList;
     }
 
