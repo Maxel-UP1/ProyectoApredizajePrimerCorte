@@ -11,6 +11,8 @@ import javafx.util.Callback;
 import model.Course;
 
 public class UserViewInitialController {
+    public Button sendbtn;
+    public Button btnAddCourse;
     private CourseController courseController;
 
     @FXML
@@ -248,5 +250,10 @@ public class UserViewInitialController {
             default:
                 return true;
         }
+    }
+
+    public void addCourse(ActionEvent actionEvent) {
+
+
     }
 }

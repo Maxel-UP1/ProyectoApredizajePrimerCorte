@@ -6,33 +6,57 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <Label fx:id="bienvenidoLabel" layoutX="371.0" layoutY="14.0" text="Bienvenido" />
-   <Label fx:id="NameLabel" layoutX="14.0" layoutY="44.0" text="Usuario" />
+<AnchorPane prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+   <Label fx:id="bienvenidoLabel" layoutX="502.0" layoutY="18.0" text="Bienvenido">
+      <font>
+         <Font size="16.0" />
+      </font></Label>
+   <Label fx:id="NameLabel" layoutX="600.0" layoutY="18.0" prefHeight="26.0" prefWidth="161.0" text="User">
+      <font>
+         <Font size="16.0" />
+      </font></Label>
 
-   <Label fx:id="matematicasLabel" layoutX="14.0" layoutY="74.0" text="Matemáticas" />
-   <ComboBox fx:id="comboBoxMatematicas" layoutX="100.0" layoutY="70.0" />
-   <TableView fx:id="mathTableView" layoutX="14.0" layoutY="104.0" prefHeight="318.0" prefWidth="569.0">
+   <Label fx:id="matematicasLabel" layoutX="227.0" layoutY="61.0" text="Matemáticas">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+   <ComboBox fx:id="comboBoxMatematicas" layoutX="346.0" layoutY="62.0" />
+   <TableView fx:id="mathTableView" layoutX="14.0" layoutY="104.0" prefHeight="318.0" prefWidth="550.0">
       <columns>
          <TableColumn fx:id="curseMathColumn" text="Curso" />
-         <TableColumn fx:id="descriptionMathColumn" prefWidth="323.1999969482422" text="Descripción" />
-         <TableColumn fx:id="itrScoreMathColumn" prefWidth="82.4000244140625" text="Puntuación" />
-         <TableColumn fx:id="interestMathComboBoxColumn" prefWidth="83.199951171875" text="Interés" />
+         <TableColumn fx:id="descriptionMathColumn" prefWidth="296.80003356933594" text="Descripción" />
+         <TableColumn fx:id="itrScoreMathColumn" prefWidth="85.5999755859375" text="Puntuación" />
+         <TableColumn fx:id="interestMathComboBoxColumn" prefWidth="110.4000244140625" text="Interés" />
       </columns>
    </TableView>
 
-   <Label fx:id="programacionLabel" layoutX="585.0" layoutY="74.0" text="Programación" />
-   <ComboBox fx:id="comboBoxProgramacion" layoutX="675.0" layoutY="70.0" />
-   <TableView fx:id="programmingTableView" layoutX="622.0" layoutY="104.0" prefHeight="318.0" prefWidth="549.0">
+   <Label fx:id="programacionLabel" layoutX="887.0" layoutY="48.0" text="Programación">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+   <ComboBox fx:id="comboBoxProgramacion" layoutX="1034.0" layoutY="49.0" />
+   <TableView fx:id="programmingTableView" layoutX="647.0" layoutY="104.0" prefHeight="318.0" prefWidth="526.0">
       <columns>
          <TableColumn fx:id="curseProgrammingColumn" text="Curso" />
-         <TableColumn fx:id="descriptionProgrammingColumn" prefWidth="307.20001220703125" text="Descripción" />
-         <TableColumn fx:id="itrScoreProgrammingColumn" prefWidth="74.4000244140625" text="Puntuación" />
-         <TableColumn fx:id="interestProgrammingComboBoxColumn" prefWidth="88.79998779296875" text="Interés" />
+         <TableColumn fx:id="descriptionProgrammingColumn" prefWidth="284.0" text="Descripción" />
+         <TableColumn fx:id="itrScoreProgrammingColumn" prefWidth="70.40008544921875" text="Puntuación" />
+         <TableColumn fx:id="interestProgrammingComboBoxColumn" prefWidth="121.599853515625" text="Interés" />
       </columns>
    </TableView>
 
-   <Button fx:id="goBtn" layoutX="14.0" layoutY="427.0" onAction="#searchCourse" text="Buscar" />
-   <Button fx:id="sendbtn" layoutX="76.0" layoutY="446.0" onAction="#sendTree" text="Enviar" />
+   <Button fx:id="goBtn" layoutX="536.0" layoutY="55.0" onAction="#searchCourse" text="Buscar Curso">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+   <Button fx:id="sendbtn" layoutX="589.0" layoutY="431.0" onAction="#sendTree" text="VAMOS A APRENDER!!">
+      <font>
+         <Font size="16.0" />
+      </font></Button>
+   <Button fx:id="btnAddCourse" layoutX="450.0" layoutY="431.0" mnemonicParsing="false" onAction="#addCourse" text="Crear Curso">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Button>
 </AnchorPane>
