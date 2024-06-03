@@ -23,10 +23,10 @@ public class CourseController {
 
     // metodo de carga creditos a los cursosssss////////////////////////////////////////////
     // Método para asignar créditos a una lista de cursos combinando score e interés y evitando repeticiones por science
-    public void assignCredits(ArrayList<Course> courses) {
+    public void assignCredits() {
         HashMap<String, HashSet<Integer>> assignedCredits = new HashMap<>();
 
-        for (Course course : courses) {
+        for (Course course : courseList) {
             String science = course.getScience();
             int score = course.getScore();
             int interest = course.getInterest();
@@ -175,6 +175,11 @@ public class CourseController {
             }
         }
         return false;
+    }
+
+    public void writeFile(String nameFile){
+
+        jsonStorageUtilities.saveDataToFile(courseList, nameFile, COUSERTYPE);
     }
 
 }

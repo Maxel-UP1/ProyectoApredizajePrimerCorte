@@ -123,6 +123,8 @@ public class UserInitialControllerView {
                                     System.out.println("Poco interesado");
                                     break;
                             }
+                            // escribir persistencia
+                            courseController.writeFile("courses");
 
                         });
                     }
@@ -164,7 +166,8 @@ public class UserInitialControllerView {
                                       System.out.println("Poco interesado");
                                    break;
                            }
-
+                            // escribir persistencia
+                            courseController.writeFile("courses");
                         });
                     }
 
@@ -220,6 +223,7 @@ public class UserInitialControllerView {
         for (Course course : courseController.getCourseList()) {
             if ("MATH".equals(course.getScience()) && matchesDifficulty(course, selectedMathDifficulty)) {
                 filteredMathCourses.add(course);
+
             }
         }
         mathTableView.setItems(filteredMathCourses);
@@ -237,7 +241,7 @@ public class UserInitialControllerView {
     public void sendTree(ActionEvent actionEvent) {
 
         System.out.println("---------------------------------------------------------------------------------------");
-        courseController.assignCredits(courseController.getCourseList());
+        courseController.assignCredits();
         for(Course course : courseController.getCourseList()) {
             System.out.println("nombre del curso-->"+course.getName());
             System.out.println("interes-->"+course.getInterest());
@@ -250,6 +254,7 @@ public class UserInitialControllerView {
         switch (difficulty) {
             case "Principiante":
                 return course.getScore() == 1|| course.getScore() == 2;
+
             case "Intermedio":
                 return course.getScore() == 3 || course.getScore() == 4;
             case "Avanzado":
