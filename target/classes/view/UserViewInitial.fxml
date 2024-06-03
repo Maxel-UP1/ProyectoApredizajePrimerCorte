@@ -8,22 +8,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <Label fx:id="bienvenidoLabel" layoutX="502.0" layoutY="18.0" text="Bienvenido">
+<AnchorPane prefHeight="500.0" prefWidth="1200.0" styleClass="fondo" stylesheets="@../Styles/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <Label fx:id="bienvenidoLabel" layoutX="562.0" layoutY="4.0" styleClass="fondo" stylesheets="@../Styles/styles.css" text="Bienvenido" textFill="WHITE">
       <font>
          <Font size="16.0" />
       </font></Label>
-   <Label fx:id="NameLabel" layoutX="600.0" layoutY="18.0" prefHeight="26.0" prefWidth="161.0" text="User">
+   <Label fx:id="NameLabel" layoutX="699.0" layoutY="1.0" prefHeight="26.0" prefWidth="161.0" styleClass="head-label" stylesheets="@../Styles/Styles.css" text="User">
       <font>
          <Font size="16.0" />
       </font></Label>
 
-   <Label fx:id="matematicasLabel" layoutX="227.0" layoutY="61.0" text="Matemáticas">
+   <Label fx:id="matematicasLabel" layoutX="79.0" layoutY="54.0" styleClass="Back-btn" stylesheets="@../Styles/Styles.css" text="Matemáticas">
       <font>
          <Font size="18.0" />
       </font></Label>
-   <ComboBox fx:id="comboBoxMatematicas" layoutX="346.0" layoutY="62.0" />
-   <TableView fx:id="mathTableView" layoutX="14.0" layoutY="104.0" prefHeight="318.0" prefWidth="550.0">
+   <ComboBox fx:id="comboBoxMatematicas" layoutX="225.0" layoutY="49.0" styleClass="Back-btn" stylesheets="@../Styles/Styles.css" />
+   <TableView fx:id="mathTableView" layoutX="14.0" layoutY="104.0" prefHeight="318.0" prefWidth="550.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
       <columns>
          <TableColumn fx:id="curseMathColumn" text="Curso" />
          <TableColumn fx:id="descriptionMathColumn" prefWidth="296.80003356933594" text="Descripción" />
@@ -32,12 +32,12 @@
       </columns>
    </TableView>
 
-   <Label fx:id="programacionLabel" layoutX="887.0" layoutY="48.0" text="Programación">
+   <Label fx:id="programacionLabel" layoutX="828.0" layoutY="60.0" styleClass="Back-btn" stylesheets="@../Styles/styles.css" text="Programación">
       <font>
          <Font size="18.0" />
       </font></Label>
-   <ComboBox fx:id="comboBoxProgramacion" layoutX="1034.0" layoutY="49.0" />
-   <TableView fx:id="programmingTableView" layoutX="647.0" layoutY="104.0" prefHeight="318.0" prefWidth="526.0">
+   <ComboBox fx:id="comboBoxProgramacion" layoutX="1016.0" layoutY="55.0" styleClass="Back-btn" stylesheets="@../Styles/Styles.css" />
+   <TableView fx:id="programmingTableView" layoutX="641.0" layoutY="104.0" prefHeight="318.0" prefWidth="550.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
       <columns>
          <TableColumn fx:id="curseProgrammingColumn" text="Curso" />
          <TableColumn fx:id="descriptionProgrammingColumn" prefWidth="284.0" text="Descripción" />
@@ -46,15 +46,15 @@
       </columns>
    </TableView>
 
-   <Button fx:id="goBtn" layoutX="536.0" layoutY="55.0" onAction="#searchCourse" text="Buscar Curso">
+   <Button fx:id="goBtn" layoutX="536.0" layoutY="55.0" onAction="#searchCourse" styleClass="Back-btn" stylesheets="@../Styles/styles.css" text="Buscar Curso">
       <font>
          <Font size="18.0" />
       </font></Button>
-   <Button fx:id="sendbtn" layoutX="589.0" layoutY="431.0" onAction="#sendTree" text="VAMOS A APRENDER!!">
+   <Button fx:id="sendbtn" layoutX="589.0" layoutY="437.0" onAction="#sendTree" styleClass="Back-btn" stylesheets="@../Styles/styles.css" text="VAMOS A APRENDER!!">
       <font>
          <Font size="16.0" />
       </font></Button>
-   <Button fx:id="btnAddCourse" layoutX="450.0" layoutY="431.0" mnemonicParsing="false" onAction="#addCourse" text="Crear Curso">
+   <Button fx:id="btnAddCourse" layoutX="414.0" layoutY="437.0" mnemonicParsing="false" onAction="#addCourse" styleClass="Back-btn" stylesheets="@../Styles/Styles.css" text="Crear Curso">
       <font>
          <Font size="16.0" />
       </font>
