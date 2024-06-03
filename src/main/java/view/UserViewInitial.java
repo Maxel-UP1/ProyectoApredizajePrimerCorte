@@ -25,7 +25,7 @@ public class UserViewInitial extends Application {
         int a = 0;
         //incializa los controladores
         UserViewInitial  UserViewInitial = new UserViewInitial();
-
+        //int a = 0;
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(UserViewInitial.class.getResource("UserViewInitial.fxml"));
