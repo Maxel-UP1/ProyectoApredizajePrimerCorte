@@ -5,7 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import  controlerView.UserViewInitialController;
+import controlerView.UserInitialControllerView;
 
 import java.io.IOException;
 
@@ -31,7 +31,7 @@ public class UserViewInitial extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(UserViewInitial.class.getResource("UserViewInitial.fxml"));
 
         // Crear el controlador y configurarlo en el FXMLLoader
-        UserViewInitialController controller = new UserViewInitialController(this.courseController);
+        UserInitialControllerView controller = new UserInitialControllerView(this.courseController);
 
         fxmlLoader.setController(controller);
 

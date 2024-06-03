@@ -7,10 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Course;
+import view.CourseView;
 
-public class UserViewInitialController {
+import java.io.IOException;
+
+public class UserInitialControllerView {
     public Button sendbtn;
     public Button btnAddCourse;
     private CourseController courseController;
@@ -56,9 +60,9 @@ public class UserViewInitialController {
     private ObservableList<Course> mathCourses;
     private ObservableList<Course> programmingCourses;
 
-    public UserViewInitialController() {}
+    public UserInitialControllerView() {}
 
-    public UserViewInitialController(CourseController courseController) {
+    public UserInitialControllerView(CourseController courseController) {
         this.courseController = courseController;
     }
 
@@ -252,8 +256,13 @@ public class UserViewInitialController {
         }
     }
 
-    public void addCourse(ActionEvent actionEvent) {
-
+    public void addCourse(ActionEvent actionEvent) throws IOException {
+        //llama la nueva ventana
+        CourseView courseView = new CourseView(courseController);
+        courseView.start(new Stage());
 
     }
+
+
+
 }

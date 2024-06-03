@@ -46,11 +46,29 @@ public class CourseController {
         writeFileReading("courses", course);
 
     }
+    public String addCourseByView(int id_Course, String name_Course,  int credits,  int score, String description, String science){
+        Course course = new Course(id_Course, name_Course, science, description, credits, score);
+        writeFileReading("courses", course);
+        return  course.toString();
+
+    }
 
     public void deleteCourseById(int id_Course) {
         List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile("courses" , COUSERTYPE);
         for (Course course : courseListTEMP) {
             if (course.getId() == id_Course) {
+                courseListTEMP.remove(course);
+                break;
+            }
+        }
+        //elimina, luego escribe en el archivo
+        jsonStorageUtilities.saveDataToFile(courseListTEMP, "courses", COUSERTYPE);
+    }
+
+    public  void deleteCourseByName(String name_Course){
+        List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile("courses" , COUSERTYPE);
+        for (Course course : courseListTEMP) {
+            if (course.getName().equalsIgnoreCase(name_Course)) {
                 courseListTEMP.remove(course);
                 break;
             }
@@ -86,5 +104,26 @@ public class CourseController {
         this.courseList = courseList;
     }
 
+    public boolean validaNameCourse(String nameValidate){
+        List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile("courses" , COUSERTYPE);
+        for (Course course : courseListTEMP) {
+            if (course.getName().equalsIgnoreCase(nameValidate)){
+                //el nombre es igual
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public boolean validaIdCourse(int idValidate){
+        for (Course course : courseList) {
+            if (course.getId() == idValidate){
+                //el ID es igual
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
