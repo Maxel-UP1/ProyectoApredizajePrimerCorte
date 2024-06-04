@@ -3,45 +3,45 @@
     "id": 1,
     "name": "Precalculus",
     "code": 100,
-    "credits": -3,
+    "credits": 7,
     "cluster": 1,
     "score": 1,
     "description": "Basic concepts of algebra and \n trigonometry needed for calculus.",
     "science": "MATH",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 2,
     "name": "Calculus I",
     "code": 101,
-    "credits": -1,
+    "credits": 9,
     "cluster": 1,
     "score": 2,
     "description": "Concepts of limits, \nderivatives, and integrals.",
     "science": "MATH",
-    "interest": 3
+    "interest": 1
   },
   {
     "id": 3,
     "name": "Calculus II",
     "code": 102,
-    "credits": 1,
+    "credits": 4,
     "cluster": 2,
     "score": 3,
     "description": "Techniques of integration, infinite \nseries, and basic differential equations.",
     "science": "MATH",
-    "interest": 1
+    "interest": 3
   },
   {
     "id": 4,
     "name": "Calculus III",
     "code": 103,
-    "credits": 3,
+    "credits": 6,
     "cluster": 3,
     "score": 4,
     "description": "Multivariable calculus, multiple \nintegrals, and vector theorems.",
     "science": "MATH",
-    "interest": 5
+    "interest": 3
   },
   {
     "id": 5,
@@ -52,18 +52,18 @@
     "score": 5,
     "description": "Advanced topics in calculus, such as Fourier \nanalysis and partial differential equations.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 6,
     "name": "Numerical Methods",
     "code": 402,
-    "credits": 7,
+    "credits": 8,
     "cluster": 6,
     "score": 6,
     "description": "Numerical techniques for solving \nequations and calculus problems.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 7,

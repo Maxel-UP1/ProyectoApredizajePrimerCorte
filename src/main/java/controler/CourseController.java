@@ -38,9 +38,13 @@ public class CourseController {
             }
 
             course.setCredits(credits);
+            writeFile("courses");
+
             assignedCredits.computeIfAbsent(science, k -> new HashSet<>()).add(credits);
         }
     }
+
+
     public void modifyCourseByCourse(Course course, int interes) {
         for (Course coourse : courseList) {
             if (coourse.getId() == course.getId()) {
@@ -54,13 +58,6 @@ public class CourseController {
 
 
 
-    public String temp(){
-       String result = "";
-        for (Course course : courseList) {
-            result = result + course.toString();
-        }
-        return result;
-    }
 
     private int calculateCredits(int score, int interest, HashSet<Integer> existingCredits) {
         // Base credits influenced by both score and interest
