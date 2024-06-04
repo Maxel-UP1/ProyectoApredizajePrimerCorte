@@ -19,7 +19,7 @@
     "score": 2,
     "description": "Concepts of limits, \nderivatives, and integrals.",
     "science": "MATH",
-    "interest": 5
+    "interest": 3
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "score": 3,
     "description": "Techniques of integration, infinite \nseries, and basic differential equations.",
     "science": "MATH",
-    "interest": 0
+    "interest": 1
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "score": 4,
     "description": "Multivariable calculus, multiple \nintegrals, and vector theorems.",
     "science": "MATH",
-    "interest": 0
+    "interest": 5
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "score": 5,
     "description": "Advanced topics in calculus, such as Fourier \nanalysis and partial differential equations.",
     "science": "MATH",
-    "interest": 0
+    "interest": 1
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "score": 6,
     "description": "Numerical techniques for solving \nequations and calculus problems.",
     "science": "MATH",
-    "interest": 0
+    "interest": 1
   },
   {
     "id": 7,
@@ -129,17 +129,6 @@
     "score": 6,
     "description": "Introduction to concepts and \ntechniques of artificial intelligence.",
     "science": "PROGRAMMING",
-    "interest": 0
-  },
-  {
-    "id": 103,
-    "name": "juannnn",
-    "code": 0,
-    "credits": 0,
-    "cluster": 0,
-    "score": 4,
-    "description": "juaaaaaaaaaaaaa",
-    "science": "MATH",
     "interest": 0
   }
 ]
