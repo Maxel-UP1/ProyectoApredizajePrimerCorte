@@ -8,7 +8,9 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="350.0" prefWidth="400.0" styleClass="fondo" stylesheets="@../Styles/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"  >
+
   <children>
+
     <Label layoutX="14.0" layoutY="58.0" text="Ingrese Nombre " textFill="WHITE"/>
     <Label layoutX="12.0" layoutY="101.0" text="Puntaje ( Dificultad )" textFill="WHITE"/>
     <Label />
@@ -27,4 +29,5 @@
       <ComboBox fx:id="comboBoxSince" layoutX="221.0" layoutY="203.0" onAction="#selecScine" onShowing="#viewSicne" prefWidth="150.0" promptText="Selecciona" />
       <Button fx:id="btnEliminateCurse" layoutX="200.0" layoutY="308.0" mnemonicParsing="false" onAction="#deleteCurse" styleClass="Back-btn" stylesheets="@../Styles/Styles.css"  text="Eliminar Curso" />
   </children>
+
 </AnchorPane>
