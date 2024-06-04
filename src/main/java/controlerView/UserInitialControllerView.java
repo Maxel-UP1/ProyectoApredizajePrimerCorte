@@ -131,11 +131,11 @@ public class UserInitialControllerView {
                                     System.out.println("Muy interesado");
                                     break;
                                 case 1:
-                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 5);
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 3);
                                     System.out.println("Interesado");
                                     break;
                                 case 2:
-                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 5);
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 1);
                                     System.out.println("Poco interesado");
                                     break;
                             }
