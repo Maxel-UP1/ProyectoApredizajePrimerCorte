@@ -25,34 +25,34 @@
     "id": 3,
     "name": "Cálculo II",
     "code": 102,
-    "credits": 11,
+    "credits": 1,
     "cluster": 2,
     "score": 3,
     "description": "Técnicas de integración, series infinitas \ny ecuaciones diferenciales básicas.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 4,
     "name": "Cálculo III",
     "code": 103,
-    "credits": 3,
+    "credits": 13,
     "cluster": 3,
     "score": 4,
     "description": "Cálculo multivariable, integrales múltiples \ny teoremas vectoriales.",
     "science": "MATH",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 5,
     "name": "Cálculo IV",
     "code": 401,
-    "credits": 5,
+    "credits": 15,
     "cluster": 4,
     "score": 5,
     "description": "Temas avanzados en cálculo, como \nel análisis de Fourier y las ecuaciones diferenciales parciales.",
     "science": "MATH",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 6,
