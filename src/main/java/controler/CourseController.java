@@ -1,6 +1,7 @@
 package controler;
 
 import com.google.gson.reflect.TypeToken;
+import model.BinarySearchTree;
 import model.Course;
 import persistence.JsonStorageUtilities;
 
@@ -213,6 +214,84 @@ public class CourseController {
 
     public  int divideNumber(int number) {
         return number / 2;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /// metodos de arbolll
+
+    //Math
+    public BinarySearchTree<Course> treeMath() {
+        ArrayList<Course> listMath = new ArrayList<Course>();
+        CourseController courseController = new CourseController();
+
+
+
+        for (Course course : courseController.getCourseList()) {
+            if (course.getScience().equals("MATH")) {
+                listMath.add(course);
+            }
+        }
+
+        listMath = courseController.sortCoursesByCredits(listMath);
+        int index = courseController.divideNumber(listMath.size());
+
+        //ARBOL MATEMATICAS
+        BinarySearchTree<Course> binarySearchTreemMATH = new BinarySearchTree<Course>();
+        binarySearchTreemMATH.insertarElemento(listMath.get(index));
+        for (int i = 0; i < listMath.size(); i++) {
+
+
+            if (listMath.get(i).getScience().equals("MATH") && i != index) {
+
+                binarySearchTreemMATH.insertarElemento(listMath.get(i));
+            }
+
+
+        }
+        return binarySearchTreemMATH;
+    }
+
+
+
+    //Programming
+    public BinarySearchTree<Course> treeProgra() {
+        ArrayList<Course> listPro = new ArrayList<Course>();
+        CourseController courseController = new CourseController();
+
+
+
+        for (Course course : courseController.getCourseList()) {
+            if (course.getScience().equals("PROGRAMMING")) {
+                listPro.add(course);
+            }
+        }
+
+        listPro = courseController.sortCoursesByCredits(listPro);
+        int index = courseController.divideNumber(listPro.size());
+
+        //ARBOL MATEMATICAS
+        BinarySearchTree<Course> binarySearchTreemMATH = new BinarySearchTree<Course>();
+        binarySearchTreemMATH.insertarElemento(listPro.get(index));
+        for (int i = 0; i < listPro.size(); i++) {
+
+
+            if (listPro.get(i).getScience().equals("PROGRAMMING") && i != index) {
+
+                binarySearchTreemMATH.insertarElemento(listPro.get(i));
+            }
+
+
+        }
+        return binarySearchTreemMATH;
     }
 
 }

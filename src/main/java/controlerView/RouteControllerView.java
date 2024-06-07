@@ -69,15 +69,13 @@ public class RouteControllerView {
 
         @FXML
         public void buttonImagenMath(ActionEvent actionEvent) {
-                // Lógica para manejar el botón "Generar Imagen" para Matemáticas
-                System.out.println("Botón Generar Imagen Matemáticas presionado");
-                // Aquí puedes agregar la lógica para generar o mostrar la imagen relacionada con Matemáticas
+
+                courseController.treeMath().prettyPrint();
         }
 
         @FXML
         public void buttonImagenProgra(ActionEvent actionEvent) {
                 // Lógica para manejar el botón "Generar Imagen" para Programación
-                System.out.println("Botón Generar Imagen Programación presionado");
-                // Aquí puedes agregar la lógica para generar o mostrar la imagen relacionada con Programación
+                courseController.treeProgra().prettyPrint();
         }
 }

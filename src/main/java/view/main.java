@@ -11,7 +11,7 @@ public class main {
     public static void main(String[] args) {
         ArrayList<Course> listMath = new ArrayList<Course>();
         CourseController courseController = new CourseController();
-        courseController.loadCoursesReadFile("courses");
+
 
 
         for (Course course : courseController.getCourseList()) {
@@ -22,8 +22,7 @@ public class main {
 
         listMath = courseController.sortCoursesByCredits(listMath);
         int index = courseController.divideNumber(listMath.size());
-        System.out.println("......................................LISTA..........................................................sssssssssssssssssssssssssssssssmksdkdsm-------" + index);
-        System.out.println(".....................INSERTAR .................MATH..........................................................");
+
         //ARBOL MATEMATICAS
         BinarySearchTree<Course> binarySearchTreemMATH = new BinarySearchTree<Course>();
         binarySearchTreemMATH.insertarElemento(listMath.get(index));
@@ -31,8 +30,7 @@ public class main {
 
 
             if (listMath.get(i).getScience().equals("MATH") && i != index) {
-                System.out.println(listMath.get(i).getName());
-                System.out.println(listMath.get(i).getCredits());
+
                 binarySearchTreemMATH.insertarElemento(listMath.get(i));
             }
 

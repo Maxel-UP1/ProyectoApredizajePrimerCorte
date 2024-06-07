@@ -8,9 +8,12 @@ import javafx.event.Event;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.BinarySearchTree;
+import model.Course;
 import utilities.Utilities;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class CourseControllerView {
     public TextField lblName;
@@ -118,4 +121,12 @@ public class CourseControllerView {
         }
 
     }
+
+
+
+
+
+
+
+
 }
