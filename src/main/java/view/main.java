@@ -8,36 +8,31 @@ import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) {
-        ArrayList<Course> list = new ArrayList<Course>();
+        ArrayList<Course> listMath = new ArrayList<Course>();
         CourseController courseController = new CourseController();
         courseController.loadCoursesReadFile("courses");
-        list = courseController.getCourseList();
 
+
+        for (Course course : courseController.getCourseList()) {
+            if (course.getScience().equals("MATH")) {
+                listMath.add(course);
+            }
+        }
+
+        listMath = courseController.sortCoursesByCredits(listMath);
+        int index = courseController.divideNumber(listMath.size());
+        System.out.println("......................................LISTA..........................................................sssssssssssssssssssssssssssssssmksdkdsm-------" + index);
         System.out.println(".....................INSERTAR .................MATH..........................................................");
         //ARBOL MATEMATICAS
         BinarySearchTree<Course> binarySearchTreemMATH = new BinarySearchTree<Course>();
-
-        for (Course course : list) {
-
-            if(course.getScience().equals("MATH")){
-                System.out.println(course.getName());
-                System.out.println(course.getCredits());
-                binarySearchTreemMATH.insertarElemento(course);
-            }
+        binarySearchTreemMATH.insertarElemento(listMath.get(index));
+        for (int i = 0; i < listMath.size(); i++) {
 
 
-        }
-
-        // ARBOL PROGRA
-        System.out.println(".....................INSERTAR .................PROGRAMMING..........................................................");
-        BinarySearchTree<Course> binarySearchTreemPROGRAMMING = new BinarySearchTree<Course>();
-
-        for (Course course : list) {
-
-            if(course.getScience().equals("PROGRAMMING")){
-                System.out.println(course.getName());
-                System.out.println(course.getCredits());
-                binarySearchTreemPROGRAMMING.insertarElemento(course);
+            if (listMath.get(i).getScience().equals("MATH") && i != index) {
+                System.out.println(listMath.get(i).getName());
+                System.out.println(listMath.get(i).getCredits());
+                binarySearchTreemMATH.insertarElemento(listMath.get(i));
             }
 
 
@@ -50,18 +45,10 @@ public class main {
 
         }
 
-        System.out.println("......................................PROGRAMMING..........................................................");
-        ArrayList<Course> list3 = binarySearchTreemMATH.obtenerElementosOrdenadosAscendentemente();
-        for (Course course : list3) {
-            System.out.println(course.getName());
-            System.out.println(course.getCredits());
-
-        }
 
         System.out.println("......................................MATH..........................................................");
         binarySearchTreemMATH.prettyPrint();
 
-        System.out.println("......................................PROGRAMMING..........................................................");
-        binarySearchTreemPROGRAMMING.prettyPrint();
+
     }
 }

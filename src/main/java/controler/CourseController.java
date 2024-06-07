@@ -198,4 +198,21 @@ public class CourseController {
         jsonStorageUtilities.saveDataToFile(courseList, nameFile, COUSERTYPE);
     }
 
+
+
+    public  ArrayList<Course> sortCoursesByCredits(ArrayList<Course> courses) {
+        Collections.sort(courses, new Comparator<Course>() {
+            @Override
+            public int compare(Course c1, Course c2) {
+                return Integer.compare(c1.getCredits(), c2.getCredits());
+            }
+        });
+        return courses;
+    }
+
+
+    public  int divideNumber(int number) {
+        return number / 2;
+    }
+
 }
