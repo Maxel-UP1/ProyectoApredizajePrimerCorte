@@ -1,6 +1,7 @@
 package view;
 
 import controler.CourseController;
+import controler.StudentController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,17 +12,23 @@ import java.io.IOException;
 
 public class UserViewInitial extends Application {
     private CourseController courseController = new CourseController();
+    private StudentController studentController = new StudentController();
     int a;
     public static Stage currentStage;
 
     public  UserViewInitial( ){
         //crea el controlador, unico no se pueden crear mas
         this.courseController = new CourseController();
+        this.studentController = new StudentController();
+
     }
 
     public void start(Stage stage) throws IOException {
         //cargar la persistencia (cursos)
         courseController.loadCoursesReadFile("courses");
+        //Crear el studiate constante
+        studentController.createStudent(01,"Albert Einstein","albert@gmail.com",320595874);
+
         int a = 0;
         //incializa los controladores
         UserViewInitial  UserViewInitial = new UserViewInitial();
@@ -31,7 +38,7 @@ public class UserViewInitial extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(UserViewInitial.class.getResource("UserViewInitial.fxml"));
 
         // Crear el controlador y configurarlo en el FXMLLoader
-        UserInitialControllerView controller = new UserInitialControllerView(this.courseController);
+        UserInitialControllerView controller = new UserInitialControllerView(this.courseController, this.studentController);
 
         fxmlLoader.setController(controller);
 
@@ -39,6 +46,7 @@ public class UserViewInitial extends Application {
 
         stage.setTitle("Aprendizaje Activo UP");
         stage.setScene(scene);
+        controller.updateName();
         stage.show();
     }
 

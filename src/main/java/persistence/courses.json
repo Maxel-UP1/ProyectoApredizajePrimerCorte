@@ -3,12 +3,12 @@
     "id": 1,
     "name": "Precalculus",
     "code": 100,
-    "credits": 0,
+    "credits": -3,
     "cluster": 1,
     "score": 1,
     "description": "Basic concepts of algebra and \n trigonometry needed for calculus.",
     "science": "MATH",
-    "interest": 3
+    "interest": 5
   },
   {
     "id": 2,
@@ -25,23 +25,23 @@
     "id": 3,
     "name": "Calculus II",
     "code": 102,
-    "credits": 4,
+    "credits": 1,
     "cluster": 2,
     "score": 3,
     "description": "Techniques of integration, infinite \nseries, and basic differential equations.",
     "science": "MATH",
-    "interest": 3
+    "interest": 5
   },
   {
     "id": 4,
     "name": "Calculus III",
     "code": 103,
-    "credits": 13,
+    "credits": 3,
     "cluster": 3,
     "score": 4,
     "description": "Multivariable calculus, multiple \nintegrals, and vector theorems.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 5,

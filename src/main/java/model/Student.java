@@ -2,61 +2,60 @@ package model;
 
 public class Student {
 
-	private int id_student;
-	private String name_student;
-	private String mail_student;
-	private int phone_student;
+	private int id;
+	private String name;
+	private String mail;
+	private int phone;
 	
 	public Student(){
-	super();
 	}
 
-	public Student(int id_student, String name_student, String mail_student, int phone_student) {
-		this.id_student = id_student;
-		this.name_student = name_student;
-		this.mail_student = mail_student;
-		this.phone_student = phone_student;
+	public Student(int id, String name, String mail, int phone) {
+		this.id = id;
+		this.name = name;
+		this.mail = mail;
+		this.phone = phone;
 
 	}
 
-	public int getId_student() {
-		return id_student;
+	public String getName() {
+		return name;
 	}
 
-	public void setId_student(int id_student) {
-		this.id_student = id_student;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getName_student() {
-		return name_student;
+	public int getId() {
+		return id;
 	}
 
-	public void setName_student(String name_student) {
-		this.name_student = name_student;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getMail_student() {
-		return mail_student;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setMail_student(String mail_student) {
-		this.mail_student = mail_student;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
-	public int getPhone_student() {
-		return phone_student;
+	public int getPhone() {
+		return phone;
 	}
 
-	public void setPhone_student(int phone_student) {
-		this.phone_student = phone_student;
+	public void setPhone(int phone) {
+		this.phone = phone;
 	}
-
 
 	@Override
 	public String toString() {
-		return "Student{" + "id_student=" + id_student + ", name_student='" + name_student + '\'' + ", mail_student='"
-				+ mail_student + '\'' + ", phone_student=" + phone_student
+		return "Student{" + "id_student=" + id + ", name_student='" + name + '\'' + ", mail_student='"
+				+ mail + '\'' + ", phone_student=" + phone
 				+ '\'' + '}';
 	}
+
 
 }

@@ -16,13 +16,14 @@ public class StudentController {
 
 	
 	public void createStudent(int id_student, String name_student, String mail_student, int phone_student  ) {
-		studentActual.setId_student(id_student);
-		studentActual.setName_student(name_student);
-		studentActual.setMail_student(mail_student);
-		studentActual.setPhone_student(phone_student);
+		studentActual = new Student(id_student, name_student, mail_student, phone_student);
 
 	}
-	
+
+	public Student getStudent() {
+		 return this.studentActual;
+	}
+
 	
 	public void deleteStudent() {
 		studentActual = null;

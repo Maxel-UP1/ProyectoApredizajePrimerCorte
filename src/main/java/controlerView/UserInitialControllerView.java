@@ -1,6 +1,7 @@
 package controlerView;
 
 import controler.CourseController;
+import controler.StudentController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +19,7 @@ public class UserInitialControllerView {
     public Button sendbtn;
     public Button btnAddCourse;
     private CourseController courseController;
+    private StudentController studentController;
 
     @FXML
     private Label bienvenidoLabel;
@@ -62,9 +64,15 @@ public class UserInitialControllerView {
 
     public UserInitialControllerView() {}
 
-    public UserInitialControllerView(CourseController courseController) {
+    public UserInitialControllerView(CourseController courseController, StudentController studentController) {
         this.courseController = courseController;
+        this.studentController = studentController;
     }
+
+    public  void updateName(){
+        NameLabel.setText("Bienvenido Estudiante : "+studentController.getStudent().getName());
+    }
+
 
     public void updateDataMath(){
         // Configurar las columnas interestComboBoxColumn con un ComboBox para matemáticas

@@ -15,7 +15,7 @@
       <font>
          <Font size="16.0" />
       </font></Label>
-   <Label fx:id="NameLabel" layoutX="699.0" layoutY="1.0" prefHeight="26.0" prefWidth="161.0" styleClass="head-label" stylesheets="@../Styles/Styles.css" text="User">
+   <Label fx:id="NameLabel" layoutX="699.0" layoutY="1.0" prefHeight="26.0" prefWidth="346.0" styleClass="head-label" stylesheets="@../Styles/Styles.css" text="User">
       <font>
          <Font size="16.0" />
       </font></Label>
@@ -48,7 +48,7 @@
       </columns>
    </TableView>
 
-   <Button fx:id="goBtn" layoutX="536.0" layoutY="55.0" onAction="#searchCourse" styleClass="Back-btn" stylesheets="@../Styles/styles.css" text="Buscar Curso">
+   <Button fx:id="goBtn" layoutX="496.0" layoutY="55.0" onAction="#searchCourse" styleClass="Back-btn" stylesheets="@../Styles/styles.css" text="Buscar/Refrescar Curso">
       <font>
          <Font size="18.0" />
       </font></Button>

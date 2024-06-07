@@ -1,46 +1,38 @@
 package model;
+public class Node<V> {
 
-public class Node<T> {
+    private V value;
+    private Node<V> izq;
+    private Node<V> der;
 
-    private T value;
-    private Node<T> left;
-    private Node<T> right;
-
-    public Node(T value) {
+    public Node(V value, Node<V> izq, Node<V> der) {
+        super();
         this.value = value;
-        this.left = null;
-        this.right = null;
+        this.izq = izq;
+        this.der = der;
     }
 
-    public Node(T value, Node<T> left, Node<T> right) {
-        this.value = value;
-        this.left = left;
-        this.right = right;
-    }
-
-
-
-    public T getValue() {
+    public V getValue() {
         return value;
     }
 
-    public void setValue(T value) {
+    public void setValue(V value) {
         this.value = value;
     }
 
-    public Node<T> getLeft() {
-        return left;
+    public Node<V> getIzq() {
+        return izq;
     }
 
-    public void setLeft(Node<T> left) {
-        this.left = left;
+    public void setIzq(Node<V> izq) {
+        this.izq = izq;
     }
 
-    public Node<T> getRight() {
-        return right;
+    public Node<V> getDer() {
+        return der;
     }
 
-    public void setRight(Node<T> right) {
-        this.right = right;
+    public void setDer(Node<V> der) {
+        this.der = der;
     }
 }
