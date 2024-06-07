@@ -3,18 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="474.0" prefWidth="440.0"  xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="474.0" prefWidth="440.0" styleClass="fondo" stylesheets="@../Styles/Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="52.0" layoutY="46.0" text="MATEMATICAS" />
-       <TableView fx:id="panelTableMatematicas" layoutX="40.0" layoutY="104.0" prefHeight="100.0" prefWidth="348.0">
+      <Label layoutX="52.0" layoutY="46.0" textFill="WHITE" text="MATEMATICAS" />
+       <TableView fx:id="panelTableMatematicas" layoutX="40.0" layoutY="104.0" prefHeight="100.0" prefWidth="348.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
            <columns>
                <TableColumn fx:id="cursoVistoMatematicas" prefWidth="116.0" text="Curso Visto" />
                <TableColumn fx:id="cursoPorVerMatematicas" prefWidth="116.0" text="Curso Por Ver" />
                <TableColumn fx:id="cursoSiguienteMatematicas" prefWidth="116" text="Curso Siguiente" />
            </columns>
        </TableView>
-       <Label layoutX="52.0" layoutY="260.0" text="PROGRAMACION" />
-       <TableView fx:id="panelTableProgramacion" layoutX="40.0" layoutY="300.0" prefHeight="100.0" prefWidth="348.0">
+       <Label layoutX="52.0" layoutY="260.0" textFill="WHITE" text="PROGRAMACION" />
+       <TableView fx:id="panelTableProgramacion" layoutX="40.0" layoutY="300.0" prefHeight="100.0" prefWidth="348.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
            <columns>
                <TableColumn fx:id="cursoVistoProgramacion" prefWidth="116.0" text="Curso Visto" />
                <TableColumn fx:id="cursoPorVerProgramacion" prefWidth="116.0" text="Curso Por Ver" />
