@@ -8,8 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import utilities.FileStorageUtilities;
+
+import javax.swing.*;
 
 public class RouteControllerView {
+        JOptionPane jp = new JOptionPane();
+        private FileStorageUtilities fileStorageUtilities = new FileStorageUtilities();
         private CourseController courseController;
         public RouteControllerView(CourseController courseController) {
                 this.courseController = courseController;
@@ -56,12 +61,8 @@ public class RouteControllerView {
 
         @FXML
         public void goBack(ActionEvent actionEvent) {
-                //como la clase no cuenta con un stage asociado se usa esta forma
-                // Obtener el nodo raíz del evento
                 Node source = (Node) actionEvent.getSource();
-                // Obtener el Stage asociado al nodo raíz
                 Stage stage = (Stage) source.getScene().getWindow();
-                // Cerrar la ventana
                 stage.close();
 
 
@@ -69,13 +70,19 @@ public class RouteControllerView {
 
         @FXML
         public void buttonImagenMath(ActionEvent actionEvent) {
+                //escribo en el archivo de los arboles de matematcias
+                fileStorageUtilities.writeGrapht("graphMath", courseController.treeMath());
+                //grafica la imagne segun la informacion
+                String Renpods = fileStorageUtilities.drawGrapht(fileStorageUtilities.readDotFile("graphMath"));
+                jp.showMessageDialog(null, Renpods);
 
-                courseController.treeMath().prettyPrint();
+
         }
 
         @FXML
         public void buttonImagenProgra(ActionEvent actionEvent) {
-                // Lógica para manejar el botón "Generar Imagen" para Programación
-                courseController.treeProgra().prettyPrint();
+                fileStorageUtilities.writeGrapht("graphProgram", courseController.treeProgra());
+                String Renpods = fileStorageUtilities.drawGrapht(fileStorageUtilities.readDotFile("graphProgram"));
+                jp.showMessageDialog(null, Renpods);
         }
 }
