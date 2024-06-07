@@ -38,9 +38,26 @@ public class CourseController {
             }
 
             course.setCredits(credits);
+            writeFile("courses");
+
             assignedCredits.computeIfAbsent(science, k -> new HashSet<>()).add(credits);
         }
     }
+
+
+    public void modifyCourseByCourse(Course course, int interes) {
+        for (Course coourse : courseList) {
+            if (coourse.getId() == course.getId()) {
+                coourse.setInterest(interes);
+                writeFile("courses");
+                break;
+            }
+        }
+
+    }
+
+
+
 
     private int calculateCredits(int score, int interest, HashSet<Integer> existingCredits) {
         // Base credits influenced by both score and interest
@@ -78,8 +95,7 @@ public class CourseController {
 
     public void readCourses(String nameFile) {
         List<Course> coursesList = jsonStorageUtilities.readContentFromFile(nameFile , COUSERTYPE);
-        //Convertir la lista de cursos  a un ArrayList<Course>, nuevo array poruqe se llama una vez
-        this.courseList = new ArrayList<>(coursesList);
+        this.courseList = (java.util.ArrayList<Course>) coursesList;
     }
 
     public void writeFileReading(String nameFile, Course course){
