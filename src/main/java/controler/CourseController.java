@@ -3,7 +3,7 @@ package controler;
 import com.google.gson.reflect.TypeToken;
 import model.BinarySearchTree;
 import model.Course;
-import persistence.JsonStorageUtilities;
+import utilities.JsonStorageUtilities;
 
 import java.lang.reflect.Type;
 import java.util.*;
