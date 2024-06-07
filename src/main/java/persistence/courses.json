@@ -3,34 +3,34 @@
     "id": 1,
     "name": "Precalculus",
     "code": 100,
-    "credits": 7,
+    "credits": -3,
     "cluster": 1,
     "score": 1,
     "description": "Basic concepts of algebra and \n trigonometry needed for calculus.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 2,
     "name": "Calculus I",
     "code": 101,
-    "credits": 9,
+    "credits": -1,
     "cluster": 1,
     "score": 2,
     "description": "Concepts of limits, \nderivatives, and integrals.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 3,
     "name": "Calculus II",
     "code": 102,
-    "credits": 4,
+    "credits": 1,
     "cluster": 2,
     "score": 3,
     "description": "Techniques of integration, infinite \nseries, and basic differential equations.",
     "science": "MATH",
-    "interest": 3
+    "interest": 5
   },
   {
     "id": 4,
@@ -58,12 +58,12 @@
     "id": 6,
     "name": "Numerical Methods",
     "code": 402,
-    "credits": 17,
+    "credits": 7,
     "cluster": 6,
     "score": 6,
     "description": "Numerical techniques for solving \nequations and calculus problems.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 7,
