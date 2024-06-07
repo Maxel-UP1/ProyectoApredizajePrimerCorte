@@ -319,7 +319,7 @@ public class BinarySearchTree<V extends Comparable<V>> {
 
     public String getCodeGraphviz() {
         String text = "digraph G {\n"
-                + "{\n"
+                //+ "{\n"
                 +"node [shape=circle];\n"
                 + "node [style=filled];\n"
                 + "node [fillcolor=\"#EEEEEE\"];\n"

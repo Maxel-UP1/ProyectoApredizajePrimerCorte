@@ -12,13 +12,14 @@ public class Node<V> {
         this.der = der;
     }
 
-    public  String valueNameNode(){
-        if(value instanceof Course) {
-            return ((Course) value).getName();
+    public String valueNameNode() {
+        if (value instanceof Course) {
+            String name = ((Course) value).getName();
+            // Reemplazar los espacios por una cadena vacía
+            return name.replaceAll("\\s+", "");
         }
         return "nada";
     }
-
     public String textGraphviz(){
 
         if(izq == null && der == null){
