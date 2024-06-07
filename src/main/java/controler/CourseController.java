@@ -5,8 +5,7 @@ import model.Course;
 import persistence.JsonStorageUtilities;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CourseController {
 
@@ -21,6 +20,52 @@ public class CourseController {
         jsonStorageUtilities = new JsonStorageUtilities();
     }
 
+
+    // metodo de carga creditos a los cursosssss////////////////////////////////////////////
+    // Método para asignar créditos a una lista de cursos combinando score e interés y evitando repeticiones por science
+    public void assignCredits() {
+        HashMap<String, HashSet<Integer>> assignedCredits = new HashMap<>();
+
+        for (Course course : courseList) {
+            String science = course.getScience();
+            int score = course.getScore();
+            int interest = course.getInterest();
+            int credits = calculateCredits(score, interest, assignedCredits.getOrDefault(science, new HashSet<>()));
+
+            // Ensure no duplicate credits within the same science
+            while (assignedCredits.getOrDefault(science, new HashSet<>()).contains(credits)) {
+                credits++;
+            }
+
+            course.setCredits(credits);
+            assignedCredits.computeIfAbsent(science, k -> new HashSet<>()).add(credits);
+        }
+    }
+
+    private int calculateCredits(int score, int interest, HashSet<Integer> existingCredits) {
+        // Base credits influenced by both score and interest
+        int baseCredits = score * 2;  // Higher score gives a higher base
+
+        // Adjust credits more significantly based on interest
+        int adjustment = 0;
+        if (interest == 5) {
+            adjustment = -5; // High interest, decrease credits significantly
+        } else if (interest == 3) {
+            adjustment = -2;  // Medium interest, no adjustment
+        } else if (interest == 1) {
+            adjustment = 5;  // Low interest, increase credits significantly
+        }
+
+        int credits = baseCredits + adjustment;
+
+        // Adjust if already assigned, ensuring we cover a broader range
+        while (existingCredits.contains(credits)) {
+            credits++;
+        }
+
+        return credits;
+}
+    /////
     // Cursos precargados en memoria
     public void loadCoursesReadFile(String nameFile) {
 
@@ -31,6 +76,11 @@ public class CourseController {
 
     }
 
+    public void readCourses(String nameFile) {
+        List<Course> coursesList = jsonStorageUtilities.readContentFromFile(nameFile , COUSERTYPE);
+        //Convertir la lista de cursos  a un ArrayList<Course>, nuevo array poruqe se llama una vez
+        this.courseList = new ArrayList<>(coursesList);
+    }
 
     public void writeFileReading(String nameFile, Course course){
         List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile(nameFile , COUSERTYPE);
@@ -46,11 +96,29 @@ public class CourseController {
         writeFileReading("courses", course);
 
     }
+    public String addCourseByView(int id_Course, String name_Course,  int credits,  int score, String description, String science){
+        Course course = new Course(id_Course, name_Course, science, description, credits, score);
+        writeFileReading("courses", course);
+        return  course.toString();
+
+    }
 
     public void deleteCourseById(int id_Course) {
         List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile("courses" , COUSERTYPE);
         for (Course course : courseListTEMP) {
             if (course.getId() == id_Course) {
+                courseListTEMP.remove(course);
+                break;
+            }
+        }
+        //elimina, luego escribe en el archivo
+        jsonStorageUtilities.saveDataToFile(courseListTEMP, "courses", COUSERTYPE);
+    }
+
+    public  void deleteCourseByName(String name_Course){
+        List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile("courses" , COUSERTYPE);
+        for (Course course : courseListTEMP) {
+            if (course.getName().equalsIgnoreCase(name_Course)) {
                 courseListTEMP.remove(course);
                 break;
             }
@@ -79,6 +147,7 @@ public class CourseController {
 
 
     public ArrayList<Course> getCourseList() {
+        readCourses("courses");
         return courseList;
     }
 
@@ -86,5 +155,31 @@ public class CourseController {
         this.courseList = courseList;
     }
 
+    public boolean validaNameCourse(String nameValidate){
+        List<Course> courseListTEMP = jsonStorageUtilities.readContentFromFile("courses" , COUSERTYPE);
+        for (Course course : courseListTEMP) {
+            if (course.getName().equalsIgnoreCase(nameValidate)){
+                //el nombre es igual
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public boolean validaIdCourse(int idValidate){
+        for (Course course : courseList) {
+            if (course.getId() == idValidate){
+                //el ID es igual
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void writeFile(String nameFile){
+
+        jsonStorageUtilities.saveDataToFile(courseList, nameFile, COUSERTYPE);
+    }
 
 }

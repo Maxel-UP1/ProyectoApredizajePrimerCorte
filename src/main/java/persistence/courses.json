@@ -3,130 +3,143 @@
     "id": 1,
     "name": "Precalculus",
     "code": 100,
-    "credits": 3,
+    "credits": -3,
     "cluster": 1,
     "score": 1,
-    "description": "Basic concepts of algebra and trigonometry needed for calculus.",
-    "science": "MATH"
+    "description": "Basic concepts of algebra and \n trigonometry needed for calculus.",
+    "science": "MATH",
+    "interest": 5
   },
   {
     "id": 2,
     "name": "Calculus I",
     "code": 101,
-    "credits": 4,
+    "credits": -1,
     "cluster": 1,
     "score": 2,
-    "description": "Concepts of limits, derivatives, and integrals.",
-    "science": "MATH"
+    "description": "Concepts of limits, \nderivatives, and integrals.",
+    "science": "MATH",
+    "interest": 0
   },
   {
     "id": 3,
     "name": "Calculus II",
     "code": 102,
-    "credits": 4,
+    "credits": 1,
     "cluster": 2,
     "score": 3,
-    "description": "Techniques of integration, infinite series, and basic differential equations.",
-    "science": "MATH"
+    "description": "Techniques of integration, infinite \nseries, and basic differential equations.",
+    "science": "MATH",
+    "interest": 0
   },
   {
     "id": 4,
     "name": "Calculus III",
     "code": 103,
-    "credits": 4,
+    "credits": 3,
     "cluster": 3,
     "score": 4,
-    "description": "Multivariable calculus, multiple integrals, and vector theorems.",
-    "science": "MATH"
+    "description": "Multivariable calculus, multiple \nintegrals, and vector theorems.",
+    "science": "MATH",
+    "interest": 0
   },
   {
     "id": 5,
     "name": "Calculus IV",
     "code": 401,
-    "credits": 4,
+    "credits": 5,
     "cluster": 4,
     "score": 5,
-    "description": "Advanced topics in calculus, such as Fourier analysis and partial differential equations.",
-    "science": "MATH"
+    "description": "Advanced topics in calculus, such as Fourier \nanalysis and partial differential equations.",
+    "science": "MATH",
+    "interest": 0
   },
   {
     "id": 6,
     "name": "Numerical Methods",
     "code": 402,
-    "credits": 4,
+    "credits": 7,
     "cluster": 6,
-    "score": 90,
-    "description": "Numerical techniques for solving equations and calculus problems.",
-    "science": "MATH"
+    "score": 6,
+    "description": "Numerical techniques for solving \nequations and calculus problems.",
+    "science": "MATH",
+    "interest": 0
   },
   {
     "id": 7,
     "name": "Introduction to Programming",
     "code": 200,
-    "credits": 3,
+    "credits": 2,
     "cluster": 1,
     "score": 1,
-    "description": "Basic programming concepts using an easy-to-learn programming language.",
-    "science": "PROGRAMMING"
+    "description": "Basic programming concepts using\n an easy-to-learn programming language.",
+    "science": "PROGRAMMING",
+    "interest": 0
   },
   {
     "id": 8,
     "name": "Programming Fundamentals",
     "code": 201,
-    "credits": 3,
+    "credits": 4,
     "cluster": 1,
     "score": 2,
-    "description": "Introduction to programming logic and basic algorithms.",
-    "science": "PROGRAMMING"
+    "description": "Introduction to programming \nlogic and basic algorithms.",
+    "science": "PROGRAMMING",
+    "interest": 0
   },
   {
     "id": 9,
     "name": "Object-Oriented Programming",
     "code": 202,
-    "credits": 4,
+    "credits": 6,
     "cluster": 2,
     "score": 3,
-    "description": "Programming using object-oriented concepts.",
-    "science": "PROGRAMMING"
+    "description": "Programming using \nobject-oriented concepts.",
+    "science": "PROGRAMMING",
+    "interest": 0
   },
   {
     "id": 10,
     "name": "Data Structures",
     "code": 203,
-    "credits": 4,
+    "credits": 8,
     "cluster": 2,
     "score": 4,
-    "description": "Study of fundamental data structures and their applications.",
-    "science": "PROGRAMMING"
+    "description": "Study of fundamental data \nstructures and their applications.",
+    "science": "PROGRAMMING",
+    "interest": 0
   },
   {
     "id": 11,
     "name": "Web Application Development",
     "code": 204,
-    "credits": 4,
+    "credits": 10,
     "cluster": 3,
     "score": 5,
-    "description": "Development of web applications using modern technologies.",
-    "science": "PROGRAMMING"
+    "description": "Development of web applications\n using modern technologies.",
+    "science": "PROGRAMMING",
+    "interest": 0
   },
   {
     "id": 12,
     "name": "Artificial Intelligence",
     "code": 205,
-    "credits": 4,
+    "credits": 12,
     "cluster": 3,
     "score": 6,
-    "description": "Introduction to concepts and techniques of artificial intelligence.",
-    "science": "PROGRAMMING"
+    "description": "Introduction to concepts and \ntechniques of artificial intelligence.",
+    "science": "PROGRAMMING",
+    "interest": 0
   },
   {
-    "id": 100,
-    "name": "PRUEBA",
-    "code": 101,
-    "credits": 3,
-    "cluster": 1,
-    "score": 5,
-    "description": "DDD de matematicas",
-    "science": "Ciencias Exactas"
+    "id": 103,
+    "name": "juannnn",
+    "code": 0,
+    "credits": 0,
+    "cluster": 0,
+    "score": 4,
+    "description": "juaaaaaaaaaaaaa",
+    "science": "MATH",
+    "interest": 0
   }
 ]
