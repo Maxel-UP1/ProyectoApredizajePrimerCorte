@@ -13,16 +13,48 @@ public class main {
         courseController.loadCoursesReadFile("courses");
         list = courseController.getCourseList();
 
-        BinarySearchTree<Course> binarySearchTree = new BinarySearchTree<Course>();
+        System.out.println(".....................INSERTAR .................MATH..........................................................");
+        //ARBOL MATEMATICAS
+        BinarySearchTree<Course> binarySearchTreemMATH = new BinarySearchTree<Course>();
+
         for (Course course : list) {
-            System.out.println(course.toString());
-            binarySearchTree.insertarElemento(course);
+
+            if(course.getScience().equals("MATH")){
+                System.out.println(course.getName());
+                System.out.println(course.getCredits());
+                binarySearchTreemMATH.insertarElemento(course);
+            }
+
 
         }
-        System.out.println("................................................................................................");
-        ArrayList<Course> list2 = binarySearchTree.obtenerElementosOrdenadosAscendentemente();
+
+        // ARBOL PROGRA
+        System.out.println(".....................INSERTAR .................PROGRAMMING..........................................................");
+        BinarySearchTree<Course> binarySearchTreemPROGRAMMING = new BinarySearchTree<Course>();
+
+        for (Course course : list) {
+
+            if(course.getScience().equals("PROGRAMMING")){
+                System.out.println(course.getName());
+                System.out.println(course.getCredits());
+                binarySearchTreemMATH.insertarElemento(course);
+            }
+
+
+        }
+        System.out.println("......................................MATH..........................................................");
+        ArrayList<Course> list2 = binarySearchTreemMATH.obtenerElementosOrdenadosAscendentemente();
         for (Course course : list2) {
-            System.out.println(course.toString());
+            System.out.println(course.getName());
+            System.out.println(course.getCredits());
+
+        }
+
+        System.out.println("......................................PROGRAMMING..........................................................");
+        ArrayList<Course> list3 = binarySearchTreemMATH.obtenerElementosOrdenadosAscendentemente();
+        for (Course course : list3) {
+            System.out.println(course.getName());
+            System.out.println(course.getCredits());
 
         }
     }
