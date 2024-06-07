@@ -39,8 +39,19 @@ public class main {
 
         }
 
+
+        //Recibe la logica de los arboles para escribir el archivo dot
+
         FileStorageUtilities fileStorageUtilities = new FileStorageUtilities();
-        fileStorageUtilities.drawGrapht(binarySearchTreemMATH);
+        //envio el nombre del archivo y el arbol.
+        fileStorageUtilities.writeGrapht("graph07",binarySearchTreemMATH);
+
+
+
+        //VOY A SUPONER QUE ESTOY EN EL BOTON
+
+
+
 
         System.out.println("......................................MATH..........................................................");
         ArrayList<Course> list2 = binarySearchTreemMATH.obtenerElementosOrdenadosAscendentemente();
