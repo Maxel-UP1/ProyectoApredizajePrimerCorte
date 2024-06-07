@@ -1,6 +1,6 @@
 package model;
 
-public class Course {
+public class Course extends Comparable<Course>{
 
 	private int id;
 	private String name;
@@ -121,5 +121,30 @@ public class Course {
 				", description='" + description + '\'' +
 				", science='" + science + '\'' +
 				'}';
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object p2) {
+		Course producto2 = (Course)p2;
+		if (this.getId() == producto2.getId() && this.getName().equals(producto2.getName())) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	@Override
+	int compare(Course value) {
+		if (this.credits > value.getCredits()) {
+			return 1;
+		}else if (this.credits < value.getCredits()) {
+			return -1;
+		}else {
+			//Si son iguales
+			return 0;
+		}
 	}
 }
