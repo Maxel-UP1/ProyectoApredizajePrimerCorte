@@ -4,10 +4,10 @@ node [style=filled];
 node [fillcolor="#EEEEEE"];
 node [color="#8C8C8C"];
 edge [color="#31CEF0"];
-EstructurasDeDatos -> IntroducciónALaProgramación -> FundamentosProgramación -> ProgramaciónOrientadaaObjetos
+IntroducciónALaProgramación -> FundamentosProgramación -> EstructurasDeDatos -> DesarrollodeAplicacionesWeb
 
 
-EstructurasDeDatos -> DesarrollodeAplicacionesWeb -> InteligenciaArtificial
+IntroducciónALaProgramación -> ProgramaciónOrientadaaObjetos -> InteligenciaArtificial
 
 
 }

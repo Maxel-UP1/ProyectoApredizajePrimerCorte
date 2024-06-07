@@ -13,22 +13,22 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TableView fx:id="panelTableMatematicas" layoutX="60.0" layoutY="93.0" prefHeight="215.0" prefWidth="365.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
+        <TableView fx:id="panelTableMatematicas" layoutX="39.0" layoutY="93.0" prefHeight="215.0" prefWidth="415.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
             <columns>
-                <TableColumn fx:id="cursoVistoMatematicas" prefWidth="116.0" text="Curso Opcional" />
-                <TableColumn fx:id="cursoPorVerMatematicas" prefWidth="116.0" text="Curso Por Ver" />
-                <TableColumn fx:id="cursoSiguienteMatematicas" prefWidth="132.79998168945315" text="Curso Siguiente" />
+                <TableColumn fx:id="cursoVistoMatematicas" prefWidth="132.79999542236328" text="Curso Recomendado" />
+                <TableColumn fx:id="cursoPorVerMatematicas" prefWidth="123.20001220703125" text="Curso Siguiente(ver)" />
+                <TableColumn fx:id="cursoSiguienteMatematicas" prefWidth="158.39996337890625" text="Curso Opcional" />
             </columns>
         </TableView>
         <Label layoutX="53.0" layoutY="336.0" text="Programación" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TableView fx:id="panelTableProgramacion" layoutX="53.0" layoutY="396.0" prefHeight="207.0" prefWidth="380.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
+        <TableView fx:id="panelTableProgramacion" layoutX="35.0" layoutY="396.0" prefHeight="207.0" prefWidth="424.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
             <columns>
-                <TableColumn fx:id="cursoVistoProgramacion" prefWidth="116.0" text="Curso Opcional" />
-                <TableColumn fx:id="cursoPorVerProgramacion" prefWidth="116.0" text="Curso Por Ver" />
-                <TableColumn fx:id="cursoSiguienteProgramacion" prefWidth="147.19998168945312" text="Curso Siguiente" />
+                <TableColumn fx:id="cursoVistoProgramacion" prefWidth="132.00000762939453" text="Curso Recomendado" />
+                <TableColumn fx:id="cursoPorVerProgramacion" prefWidth="148.0" text="Curso Siguiente(ver)" />
+                <TableColumn fx:id="cursoSiguienteProgramacion" prefWidth="140.79998779296875" text="Curso Opcional" />
             </columns>
         </TableView>
         <Button fx:id="btnBack" layoutX="14.0" layoutY="606.0" mnemonicParsing="false" onAction="#goBack" text="Atras">

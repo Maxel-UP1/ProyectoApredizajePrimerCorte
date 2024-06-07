@@ -4,10 +4,10 @@ node [style=filled];
 node [fillcolor="#EEEEEE"];
 node [color="#8C8C8C"];
 edge [color="#31CEF0"];
-CálculoIII -> Precálculo -> CálculoI -> CálculoII
+Precálculo -> CálculoIII -> CálculoII -> CálculoIV
 
 
-CálculoIII -> CálculoIV -> MétodosNuméricos
+Precálculo -> CálculoI -> MétodosNuméricos
 
 
 }

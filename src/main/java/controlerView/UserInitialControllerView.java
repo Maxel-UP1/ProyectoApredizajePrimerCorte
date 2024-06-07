@@ -277,6 +277,7 @@ public class UserInitialControllerView {
     public void sendTree(ActionEvent actionEvent) throws IOException{
         updateDataMath();
         updateDataProgramming();
+        courseController.assignCredits();
         RouteView routeView = new RouteView(courseController);
         routeView.start(new Stage());
     }

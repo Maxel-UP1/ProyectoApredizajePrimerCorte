@@ -3,34 +3,34 @@
     "id": 1,
     "name": "Precálculo",
     "code": 100,
-    "credits": -3,
+    "credits": 7,
     "cluster": 1,
     "score": 1,
     "description": "Conceptos básicos de álgebra y \ntrigonometría necesarios para el cálculo.",
     "science": "MATH",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 2,
     "name": "Cálculo I",
     "code": 101,
-    "credits": -1,
+    "credits": 9,
     "cluster": 1,
     "score": 2,
     "description": "Conceptos de límites, \nderivadas e integrales.",
     "science": "MATH",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 3,
     "name": "Cálculo II",
     "code": 102,
-    "credits": 1,
+    "credits": 4,
     "cluster": 2,
     "score": 3,
     "description": "Técnicas de integración, series infinitas \ny ecuaciones diferenciales básicas.",
     "science": "MATH",
-    "interest": 5
+    "interest": 3
   },
   {
     "id": 4,
@@ -58,45 +58,45 @@
     "id": 6,
     "name": "Métodos Numéricos",
     "code": 402,
-    "credits": 7,
+    "credits": 17,
     "cluster": 6,
     "score": 6,
     "description": "Técnicas numéricas para resolver \necuaciones y problemas de cálculo.",
     "science": "MATH",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 7,
     "name": "Introducción A La  Programación",
     "code": 200,
-    "credits": -3,
+    "credits": 7,
     "cluster": 1,
     "score": 1,
     "description": "Conceptos básicos de programación usando \nun lenguaje de programación fácil de aprender.",
     "science": "PROGRAMMING",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 8,
     "name": "Fundamentos  Programación",
     "code": 201,
-    "credits": -1,
+    "credits": 2,
     "cluster": 1,
     "score": 2,
     "description": "Introducción a la lógica de programación \ny algoritmos básicos.",
     "science": "PROGRAMMING",
-    "interest": 5
+    "interest": 3
   },
   {
     "id": 9,
     "name": "Programación Orientada a Objetos",
     "code": 202,
-    "credits": 1,
+    "credits": 11,
     "cluster": 2,
     "score": 3,
     "description": "Programación utilizando \nconceptos orientados a objetos.",
     "science": "PROGRAMMING",
-    "interest": 5
+    "interest": 1
   },
   {
     "id": 10,
@@ -124,11 +124,11 @@
     "id": 12,
     "name": "Inteligencia Artificial",
     "code": 205,
-    "credits": 7,
+    "credits": 17,
     "cluster": 3,
     "score": 6,
     "description": "Introducción a conceptos y \ntécnicas de inteligencia artificial.",
     "science": "PROGRAMMING",
-    "interest": 5
+    "interest": 1
   }
 ]
