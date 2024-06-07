@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.Course;
 import view.CourseView;
+import view.RouteView;
 
 import java.io.IOException;
 
@@ -282,7 +283,7 @@ public class UserInitialControllerView {
     }
 
     @FXML
-    public void sendTree(ActionEvent actionEvent) {
+    public void sendTree(ActionEvent actionEvent) throws IOException{
         updateDataMath();
         updateDataProgramming();
         //System.out.println(courseController.temp());
@@ -296,6 +297,10 @@ public class UserInitialControllerView {
             System.out.println("creditos-->"+ course.getCredits());
         }
         // Implementar funcionalidad para enviar datos
+
+        //llama la nueva ventana
+        RouteView routeView = new RouteView(courseController);
+        routeView.start(new Stage());
     }
 
     private boolean matchesDifficulty(Course course, String difficulty) {
