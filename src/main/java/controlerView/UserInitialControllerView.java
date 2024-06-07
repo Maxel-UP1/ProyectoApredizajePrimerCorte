@@ -121,6 +121,7 @@ public class UserInitialControllerView {
             @Override
             public TableCell<Course, String> call(TableColumn<Course, String> param) {
                 return new TableCell<Course, String>() {
+                    //Muy Intersado es dominado, poco interesado es lo contrario a dominado
                     private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
 
                     {
