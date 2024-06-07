@@ -191,8 +191,8 @@ public class UserInitialControllerView {
         programmingTableView.setItems(programmingCourses);
 
         // Configurar los ComboBox con opciones de dificultad
-        comboBoxMatematicas.setItems(FXCollections.observableArrayList("Principiante", "Intermedio", "Avanzado"));
-        comboBoxProgramacion.setItems(FXCollections.observableArrayList("Principiante", "Intermedio", "Avanzado"));
+        comboBoxMatematicas.setItems(FXCollections.observableArrayList("","Principiante", "Intermedio", "Avanzado"));
+        comboBoxProgramacion.setItems(FXCollections.observableArrayList("","Principiante", "Intermedio", "Avanzado"));
         //llama al llenar datos de mataticas fila de interes
         updateDataMath();
         updateDataProgramming();
@@ -234,21 +234,43 @@ public class UserInitialControllerView {
         String selectedProgrammingDifficulty = comboBoxProgramacion.getValue();
 
         ObservableList<Course> filteredMathCourses = FXCollections.observableArrayList();
-        for (Course course : courseController.getCourseList()) {
-            if ("MATH".equals(course.getScience()) && matchesDifficulty(course, selectedMathDifficulty)) {
-                filteredMathCourses.add(course);
-
-            }
-        }
-        mathTableView.setItems(filteredMathCourses);
-
         ObservableList<Course> filteredProgrammingCourses = FXCollections.observableArrayList();
+
+        if (selectedMathDifficulty == null || selectedMathDifficulty.equals("")) {
+            fillTable();
+            mathTableView.setItems(mathCourses);
+        } else {
+            for (Course course : courseController.getCourseList()) {
+                if ("MATH".equals(course.getScience()) && matchesDifficulty(course, selectedMathDifficulty)) {
+                    filteredMathCourses.add(course);
+                }
+            }
+            mathTableView.setItems(filteredMathCourses);
+        }
+
+        if (selectedProgrammingDifficulty == null || selectedProgrammingDifficulty.equals("")) {
+            fillTable();
+            programmingTableView.setItems(programmingCourses);
+        } else {
+            for (Course course : courseController.getCourseList()) {
+                if ("PROGRAMMING".equals(course.getScience()) && matchesDifficulty(course, selectedProgrammingDifficulty)) {
+                    filteredProgrammingCourses.add(course);
+                }
+            }
+            programmingTableView.setItems(filteredProgrammingCourses);
+        }
+    }
+
+    public void fillTable(){
+        mathCourses.clear();
+        programmingCourses.clear();
         for (Course course : courseController.getCourseList()) {
-            if ("PROGRAMMING".equals(course.getScience()) && matchesDifficulty(course, selectedProgrammingDifficulty)) {
-                filteredProgrammingCourses.add(course);
+            if ("MATH".equals(course.getScience())) {
+                mathCourses.add(course);
+            } else if ("PROGRAMMING".equals(course.getScience())) {
+                programmingCourses.add(course);
             }
         }
-        programmingTableView.setItems(filteredProgrammingCourses);
     }
 
     @FXML
