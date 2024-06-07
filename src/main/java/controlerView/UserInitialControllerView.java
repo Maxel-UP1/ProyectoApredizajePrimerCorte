@@ -236,37 +236,36 @@ public class UserInitialControllerView {
         ObservableList<Course> filteredMathCourses = FXCollections.observableArrayList();
         ObservableList<Course> filteredProgrammingCourses = FXCollections.observableArrayList();
 
-        if ((selectedMathDifficulty == null || selectedMathDifficulty.equals(""))) {
+        if (selectedMathDifficulty == null || selectedMathDifficulty.equals("")) {
             fillTable();
-            filteredMathCourses = mathCourses;
-            filteredProgrammingCourses = programmingCourses;
-        }else {
-
-        }
-        for (Course course : courseController.getCourseList()) {
-
-            if ("MATH".equals(course.getScience()) && matchesDifficulty(course, selectedMathDifficulty )) {
+            mathTableView.setItems(mathCourses);
+        } else {
+            for (Course course : courseController.getCourseList()) {
+                if ("MATH".equals(course.getScience()) && matchesDifficulty(course, selectedMathDifficulty)) {
                     filteredMathCourses.add(course);
-
+                }
             }
-
-
-        }
-        mathTableView.setItems(filteredMathCourses);
-
-        for (Course course : courseController.getCourseList()) {
-            if ("PROGRAMMING".equals(course.getScience()) && matchesDifficulty(course, selectedProgrammingDifficulty)) {
-                filteredProgrammingCourses.add(course);
-            }
+            mathTableView.setItems(filteredMathCourses);
         }
 
-        programmingTableView.setItems(filteredProgrammingCourses);
+        if (selectedProgrammingDifficulty == null || selectedProgrammingDifficulty.equals("")) {
+            fillTable();
+            programmingTableView.setItems(programmingCourses);
+        } else {
+            for (Course course : courseController.getCourseList()) {
+                if ("PROGRAMMING".equals(course.getScience()) && matchesDifficulty(course, selectedProgrammingDifficulty)) {
+                    filteredProgrammingCourses.add(course);
+                }
+            }
+            programmingTableView.setItems(filteredProgrammingCourses);
+        }
     }
+
     public void fillTable(){
         mathCourses.clear();
         programmingCourses.clear();
         for (Course course : courseController.getCourseList()) {
-            if ("MATH".equals(course.getScience()) ){
+            if ("MATH".equals(course.getScience())) {
                 mathCourses.add(course);
             } else if ("PROGRAMMING".equals(course.getScience())) {
                 programmingCourses.add(course);
