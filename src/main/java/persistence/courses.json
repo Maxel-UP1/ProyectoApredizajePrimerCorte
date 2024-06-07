@@ -25,12 +25,12 @@
     "id": 3,
     "name": "Cálculo II",
     "code": 102,
-    "credits": 4,
+    "credits": 11,
     "cluster": 2,
     "score": 3,
     "description": "Técnicas de integración, series infinitas \ny ecuaciones diferenciales básicas.",
     "science": "MATH",
-    "interest": 3
+    "interest": 1
   },
   {
     "id": 4,
@@ -58,12 +58,12 @@
     "id": 6,
     "name": "Métodos Numéricos",
     "code": 402,
-    "credits": 17,
+    "credits": 8,
     "cluster": 6,
     "score": 6,
     "description": "Técnicas numéricas para resolver \necuaciones y problemas de cálculo.",
     "science": "MATH",
-    "interest": 1
+    "interest": 5
   },
   {
     "id": 7,
