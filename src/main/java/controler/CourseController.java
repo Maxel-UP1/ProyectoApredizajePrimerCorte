@@ -109,7 +109,7 @@ public class CourseController {
 
 
     public void addCourse(int id_Course, String name_Course, int code_Curse, int credits, int cluster, int score, String description, String science) {
-        Course course = new Course(id_Course, name_Course, code_Curse, credits, cluster, score, description, science);
+        Course course = new Course();
         writeFileReading("courses", course);
 
     }

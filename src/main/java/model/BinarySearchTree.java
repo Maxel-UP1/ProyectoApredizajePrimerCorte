@@ -18,7 +18,7 @@ public class BinarySearchTree<V extends Comparable<V>> {
 
         if (raiz == null) {
             raiz = nuevoNodo;
-            System.out.println("Inserto la raiz");
+            //System.out.println("Inserto la raiz");
         } else {
             // Necesitamos encontrar en que posición debemos insertar el nodo
             Node<V> aux = raiz;
@@ -29,23 +29,23 @@ public class BinarySearchTree<V extends Comparable<V>> {
                 if (aux.getDer() == null && aux.getIzq() == null) {
                     if (value.compare(aux.getValue()) == 1) {
                         // Derecha
-                        System.out.println(value + " Lo insertamos a la derecha de: " + aux.getValue());
+                       // System.out.println(value + " Lo insertamos a la derecha de: " + aux.getValue());
                         aux.setDer(nuevoNodo);
                         aux = null;
                     } else {
                         // Izquierda
-                        System.out.println(value + " Lo insertamos a la izquierda de: " + aux.getValue());
+                       // System.out.println(value + " Lo insertamos a la izquierda de: " + aux.getValue());
                         aux.setIzq(nuevoNodo);
                         aux = null;
                     }
                 } else if (value.compare(aux.getValue()) == 1 && aux.getDer() == null) {
                     // Lo insertamos a la derecha
-                    System.out.println(value + " Lo insertamos a la derecha de: " + aux.getValue());
+                   //System.out.println(value + " Lo insertamos a la derecha de: " + aux.getValue());
                     aux.setDer(nuevoNodo);
                     aux = null;
                 } else if (value.compare(aux.getValue()) == -1 && aux.getIzq() == null) {
                     // Lo insertamos a la izquierda
-                    System.out.println(value + " Lo insertamos a la izquierda de: " + aux.getValue());
+                   // System.out.println(value + " Lo insertamos a la izquierda de: " + aux.getValue());
                     aux.setIzq(nuevoNodo);
                     aux = null;
                 } else {
@@ -433,4 +433,64 @@ public class BinarySearchTree<V extends Comparable<V>> {
             perpiece /= 2;
         }
     }
+
+
+
+    //recorrido inorden
+    // Método para el recorrido inorden
+    public String inOrderTraversal() {
+        StringBuilder result = new StringBuilder();
+        inOrderTraversal(raiz, result);
+        return result.toString().trim();
+    }
+
+    private void inOrderTraversal(Node node, StringBuilder result) {
+        if (node != null) {
+            inOrderTraversal(node.getIzq(), result);
+            result.append(node.getValue()).append(" ");
+            inOrderTraversal(node.getDer(), result);
+        }
+    }
+
+
+
+    // valores del arbol izquierdo
+    // Método para obtener los valores del subárbol izquierdo
+    // Método para obtener los valores del subárbol izquierdo
+    public ArrayList<V> leftSubtreeValues() {
+        ArrayList<V> result = new ArrayList<>();
+        leftSubtreeValues(raiz.getIzq(), result);
+        return result;
+    }
+
+    private void leftSubtreeValues(Node<V> node, ArrayList<V> result) {
+        if (node != null) {
+            result.add(node.getValue());
+            leftSubtreeValues(node.getIzq(), result);
+            leftSubtreeValues(node.getDer(), result);
+        }
+    }
+
+
+
+
+    public ArrayList<V> rightSubtreeValues() {
+        ArrayList<V> result = new ArrayList<>();
+        rightSubtreeValues(raiz.getDer(), result);
+        return result;
+    }
+
+    private void rightSubtreeValues(Node<V> node, ArrayList<V> result) {
+        if (node != null) {
+            result.add(node.getValue());
+            rightSubtreeValues(node.getIzq(), result);
+            rightSubtreeValues(node.getDer(), result);
+        }
+    }
+
+    public Node<V> getRoot() {
+        return raiz;
+    }
 }
+
+

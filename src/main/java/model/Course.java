@@ -13,7 +13,7 @@ public class Course extends Comparable<Course> {
     private int interest;
 
 
-    public Course(int id, String name, int code, int credits, int cluster, int score, String description, String science) {
+    public Course() {
         this.id = id;
         this.name = name;
         this.code = code;
