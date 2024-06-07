@@ -29,7 +29,7 @@ public class RouteView extends Application {
         fxmlLoader.setController(courseControllerView);
 
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 1000, 500);
+        Scene scene = new Scene(root);
 
         stage.setTitle("Tabla de Rutas");
         stage.setScene(scene);

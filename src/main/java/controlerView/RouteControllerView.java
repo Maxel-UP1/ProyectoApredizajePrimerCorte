@@ -3,9 +3,11 @@ package controlerView;
 import controler.CourseController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
 
 public class RouteControllerView {
         private CourseController courseController;
@@ -53,10 +55,16 @@ public class RouteControllerView {
         }
 
         @FXML
-        public void atrasButton(ActionEvent actionEvent) {
-                // Lógica para manejar el botón "Atras"
-                System.out.println("Botón Atras presionado");
-                // Aquí puedes agregar la lógica para cambiar la escena o retroceder en la navegación
+        public void goBack(ActionEvent actionEvent) {
+                //como la clase no cuenta con un stage asociado se usa esta forma
+                // Obtener el nodo raíz del evento
+                Node source = (Node) actionEvent.getSource();
+                // Obtener el Stage asociado al nodo raíz
+                Stage stage = (Stage) source.getScene().getWindow();
+                // Cerrar la ventana
+                stage.close();
+
+
         }
 
         @FXML
