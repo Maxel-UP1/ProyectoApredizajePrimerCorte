@@ -3,6 +3,7 @@ module com.example.ejemplojfx {
     requires javafx.fxml;
     requires com.google.gson;
     requires java.desktop;
+    requires guru.nidi.graphviz;
 
     opens view to javafx.fxml;
     opens controler to javafx.fxml;

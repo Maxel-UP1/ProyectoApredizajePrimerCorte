@@ -1,9 +1,0 @@
-model\Node.class
-model\Course.class
-module-info.class
-model\Comparable.class
-controler\CourseController.class
-model\BinarySearchTree.class
-view\main.class
-persistence\JsonStorageUtilities.class
-controler\CourseController$2.class

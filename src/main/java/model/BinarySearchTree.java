@@ -317,6 +317,22 @@ public class BinarySearchTree<V extends Comparable<V>> {
 
     }
 
+    public String getCodeGraphviz() {
+        String text = "digraph G {\n"
+                + "{\n"
+                +"node [shape=circle];\n"
+                + "node [style=filled];\n"
+                + "node [fillcolor=\"#EEEEEE\"];\n"
+                + "node [color=\"#8C8C8C\"];\n"
+                + "edge [color=\"#31CEF0\"];\n";
+        if (raiz != null) {
+            text += raiz.textGraphviz();
+        }
+        text += "\n}";
+        return text;
+
+    }
+
 
 
     public void prettyPrint() {

@@ -3,6 +3,7 @@ package view;
 import controler.CourseController;
 import model.BinarySearchTree;
 import model.Course;
+import persistence.FileStorageUtilities;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,10 @@ public class main {
 
 
         }
+
+        FileStorageUtilities fileStorageUtilities = new FileStorageUtilities();
+        fileStorageUtilities.drawGrapht(binarySearchTreemMATH);
+
         System.out.println("......................................MATH..........................................................");
         ArrayList<Course> list2 = binarySearchTreemMATH.obtenerElementosOrdenadosAscendentemente();
         for (Course course : list2) {

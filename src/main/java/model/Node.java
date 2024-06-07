@@ -12,6 +12,31 @@ public class Node<V> {
         this.der = der;
     }
 
+    public  String valueNameNode(){
+        if(value instanceof Course) {
+            return ((Course) value).getName();
+        }
+        return "nada";
+    }
+
+    public String textGraphviz(){
+
+        if(izq == null && der == null){
+            return valueNameNode();
+        }else {
+            String text = "";
+            if(izq != null){
+                text = valueNameNode() + " -> " + izq.textGraphviz() + "\n";
+
+            }
+            if(der != null){
+                text += valueNameNode() + " -> " + der.textGraphviz() + "\n";
+            }
+
+            return text;
+        }
+
+    }
     public V getValue() {
         return value;
     }
