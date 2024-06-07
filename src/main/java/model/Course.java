@@ -109,17 +109,16 @@ public class Course {
 		this.science = science;
 	}
 
-	@Override
 	public String toString() {
 		return "Course{" +
-				"id_Course=" + id +
-				", name_Course='" + name + '\'' +
-				", code_Curse=" + code +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", code=" + code +
 				", credits=" + credits +
-				", cluster=" + cluster +
 				", score=" + score +
 				", description='" + description + '\'' +
 				", science='" + science + '\'' +
+				", interest=" + interest +
 				'}';
 	}
 }
