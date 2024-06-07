@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Utilities {
+
+    private static int fileCounter = 0;
+
     //los primeros 3 son metodos utlizados para generar cuentas.
 
     //el metodo quita espacios al principio y al final del nombre.
@@ -99,6 +102,13 @@ public class Utilities {
         return random.nextInt(max - min + 1) + min;
     }
 
+    public  String generateUniqueFilename() {
+        String filename;
+        fileCounter++;
+        filename = "grapht" + fileCounter;
+        return filename;
+
+    }
 
 
 }
