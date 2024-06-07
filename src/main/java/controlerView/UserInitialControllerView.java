@@ -66,6 +66,101 @@ public class UserInitialControllerView {
         this.courseController = courseController;
     }
 
+    public void updateDataMath(){
+        // Configurar las columnas interestComboBoxColumn con un ComboBox para matemáticas
+        interestMathComboBoxColumn.setCellFactory(new Callback<TableColumn<Course, String>, TableCell<Course, String>>() {
+            @Override
+            public TableCell<Course, String> call(TableColumn<Course, String> param) {
+                return new TableCell<Course, String>() {
+                    private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
+
+                    {
+                        comboBox.setOnAction(event -> {
+
+                            switch (comboBox.getSelectionModel().getSelectedIndex()) {
+                                case 0:
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 5);
+                                    //getTableView().getItems().get(getIndex()).setInterest(5);
+                                    System.out.println("Muy interesado");
+                                    break;
+                                case 1:
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 3);
+                                    //getTableView().getItems().get(getIndex()).setInterest(3);
+                                    System.out.println("Interesado");
+                                    break;
+                                case 2:
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 1);
+                                    //getTableView().getItems().get(getIndex()).setInterest(1);
+                                    System.out.println("Poco interesado");
+                                    break;
+                            }
+                            // escribir persistencia
+                            courseController.writeFile("courses");
+
+                        });
+                    }
+
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(comboBox);
+                            comboBox.getSelectionModel().select(item);
+                        }
+                    }
+                };
+            }
+        });
+    }
+
+    public void updateDataProgramming() {
+        // Configurar las columnas interestComboBoxColumn con un ComboBox para programación
+        interestProgrammingComboBoxColumn.setCellFactory(new Callback<TableColumn<Course, String>, TableCell<Course, String>>() {
+            @Override
+            public TableCell<Course, String> call(TableColumn<Course, String> param) {
+                return new TableCell<Course, String>() {
+                    //Muy Intersado es dominado, poco interesado es lo contrario a dominado
+                    private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
+
+                    {
+                        comboBox.setOnAction(event -> {
+                            switch (comboBox.getSelectionModel().getSelectedIndex()) {
+                                case 0:
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 5);
+                                    System.out.println("Muy interesado");
+                                    break;
+                                case 1:
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 3);
+                                    System.out.println("Interesado");
+                                    break;
+                                case 2:
+                                    courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 1);
+                                    System.out.println("Poco interesado");
+                                    break;
+                            }
+                            // escribir persistencia
+                            courseController.writeFile("courses");
+                        });
+                    }
+
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(comboBox);
+                            comboBox.getSelectionModel().select(item);
+                        }
+                    }
+                };
+            }
+        });
+    }
+
+
     @FXML
     public void initialize() {
         // Configurar las columnas de la tabla de matemáticas
@@ -98,92 +193,11 @@ public class UserInitialControllerView {
         // Configurar los ComboBox con opciones de dificultad
         comboBoxMatematicas.setItems(FXCollections.observableArrayList("Principiante", "Intermedio", "Avanzado"));
         comboBoxProgramacion.setItems(FXCollections.observableArrayList("Principiante", "Intermedio", "Avanzado"));
+        //llama al llenar datos de mataticas fila de interes
+        updateDataMath();
+        updateDataProgramming();
 
-        // Configurar las columnas interestComboBoxColumn con un ComboBox para matemáticas
-        interestMathComboBoxColumn.setCellFactory(new Callback<TableColumn<Course, String>, TableCell<Course, String>>() {
-            @Override
-            public TableCell<Course, String> call(TableColumn<Course, String> param) {
-                return new TableCell<Course, String>() {
-                    private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
 
-                    {
-                        comboBox.setOnAction(event -> {
-
-                            switch (comboBox.getSelectionModel().getSelectedIndex()) {
-                                case 0:
-                                    getTableView().getItems().get(getIndex()).setInterest(5);
-                                    System.out.println("Muy interesado");
-                                    break;
-                                case 1:
-                                    getTableView().getItems().get(getIndex()).setInterest(3);
-                                    System.out.println("Interesado");
-                                    break;
-                                case 2:
-                                    getTableView().getItems().get(getIndex()).setInterest(1);
-                                    System.out.println("Poco interesado");
-                                    break;
-                            }
-                            // escribir persistencia
-                            courseController.writeFile("courses");
-
-                        });
-                    }
-
-                    @Override
-                    protected void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            setGraphic(comboBox);
-                            comboBox.getSelectionModel().select(item);
-                        }
-                    }
-                };
-            }
-        });
-
-        // Configurar las columnas interestComboBoxColumn con un ComboBox para programación
-        interestProgrammingComboBoxColumn.setCellFactory(new Callback<TableColumn<Course, String>, TableCell<Course, String>>() {
-            @Override
-            public TableCell<Course, String> call(TableColumn<Course, String> param) {
-                return new TableCell<Course, String>() {
-                    private final ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList("Muy interesado", "Interesado", "Poco interesado"));
-
-                    {
-                        comboBox.setOnAction(event -> {
-                           switch (comboBox.getSelectionModel().getSelectedIndex()) {
-                               case 0:
-                                   getTableView().getItems().get(getIndex()).setInterest(5);
-                                   System.out.println("Muy interesado");
-                                   break;
-                               case 1:
-                                   getTableView().getItems().get(getIndex()).setInterest(3);
-                                   System.out.println("Interesado");
-                                   break;
-                               case 2:
-                                   getTableView().getItems().get(getIndex()).setInterest(1);
-                                      System.out.println("Poco interesado");
-                                   break;
-                           }
-                            // escribir persistencia
-                            courseController.writeFile("courses");
-                        });
-                    }
-
-                    @Override
-                    protected void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            setGraphic(comboBox);
-                            comboBox.getSelectionModel().select(item);
-                        }
-                    }
-                };
-            }
-        });
 
         // Añadir columnas a las tablas
         mathTableView.getColumns().add(interestMathComboBoxColumn);
@@ -239,9 +253,13 @@ public class UserInitialControllerView {
 
     @FXML
     public void sendTree(ActionEvent actionEvent) {
-
+        updateDataMath();
+        updateDataProgramming();
+        //System.out.println(courseController.temp());
         System.out.println("---------------------------------------------------------------------------------------");
         courseController.assignCredits();
+
+
         for(Course course : courseController.getCourseList()) {
             System.out.println("nombre del curso-->"+course.getName());
             System.out.println("interes-->"+course.getInterest());
