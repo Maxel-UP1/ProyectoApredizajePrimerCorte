@@ -37,7 +37,7 @@ public class main {
             if(course.getScience().equals("PROGRAMMING")){
                 System.out.println(course.getName());
                 System.out.println(course.getCredits());
-                binarySearchTreemMATH.insertarElemento(course);
+                binarySearchTreemPROGRAMMING.insertarElemento(course);
             }
 
 
@@ -57,5 +57,11 @@ public class main {
             System.out.println(course.getCredits());
 
         }
+
+        System.out.println("......................................MATH..........................................................");
+        binarySearchTreemMATH.prettyPrint();
+
+        System.out.println("......................................PROGRAMMING..........................................................");
+        binarySearchTreemPROGRAMMING.prettyPrint();
     }
 }
