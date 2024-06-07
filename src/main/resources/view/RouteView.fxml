@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="474.0" prefWidth="440.0" styleClass="fondo" stylesheets="@../Styles/Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="52.0" layoutY="46.0" textFill="WHITE" text="MATEMATICAS" />
-       <TableView fx:id="panelTableMatematicas" layoutX="40.0" layoutY="104.0" prefHeight="100.0" prefWidth="348.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
-           <columns>
-               <TableColumn fx:id="cursoVistoMatematicas" prefWidth="116.0" text="Curso Visto" />
-               <TableColumn fx:id="cursoPorVerMatematicas" prefWidth="116.0" text="Curso Por Ver" />
-               <TableColumn fx:id="cursoSiguienteMatematicas" prefWidth="116" text="Curso Siguiente" />
-           </columns>
-       </TableView>
-       <Label layoutX="52.0" layoutY="260.0" textFill="WHITE" text="PROGRAMACION" />
-       <TableView fx:id="panelTableProgramacion" layoutX="40.0" layoutY="300.0" prefHeight="100.0" prefWidth="348.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
-           <columns>
-               <TableColumn fx:id="cursoVistoProgramacion" prefWidth="116.0" text="Curso Visto" />
-               <TableColumn fx:id="cursoPorVerProgramacion" prefWidth="116.0" text="Curso Por Ver" />
-               <TableColumn fx:id="cursoSiguienteProgramacion" prefWidth="116" text="Curso Siguiente" />
-           </columns>
-       </TableView>
-      <Button layoutX="248.0" layoutY="426.0" mnemonicParsing="false" text="Siguiente" />
-      <Button layoutX="336.0" layoutY="426.0" mnemonicParsing="false" text="Atras" />
-   </children>
+<AnchorPane prefHeight="500.0" prefWidth="800.0" styleClass="fondo" stylesheets="@../Styles/Styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+    <children>
+        <Label layoutX="52.0" layoutY="46.0" text="MATEMATICAS" textFill="WHITE" />
+        <TableView fx:id="panelTableMatematicas" layoutX="80.0" layoutY="91.0" prefHeight="100.0" prefWidth="365.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
+            <columns>
+                <TableColumn fx:id="cursoVistoMatematicas" prefWidth="116.0" text="Curso Visto" />
+                <TableColumn fx:id="cursoPorVerMatematicas" prefWidth="116.0" text="Curso Por Ver" />
+                <TableColumn fx:id="cursoSiguienteMatematicas" prefWidth="116" text="Curso Siguiente" />
+            </columns>
+        </TableView>
+        <Label layoutX="52.0" layoutY="260.0" text="PROGRAMACION" textFill="WHITE" />
+        <TableView fx:id="panelTableProgramacion" layoutX="73.0" layoutY="296.0" prefHeight="100.0" prefWidth="380.0" styleClass="gradientinitial" stylesheets="@../Styles/Styles.css">
+            <columns>
+                <TableColumn fx:id="cursoVistoProgramacion" prefWidth="116.0" text="Curso Visto" />
+                <TableColumn fx:id="cursoPorVerProgramacion" prefWidth="116.0" text="Curso Por Ver" />
+                <TableColumn fx:id="cursoSiguienteProgramacion" prefWidth="116" text="Curso Siguiente" />
+            </columns>
+        </TableView>
+        <Button fx:id="atrasButton" layoutX="336.0" layoutY="426.0" onAction="#atrasButton" mnemonicParsing="false" text="Atras" />
+        <Button fx:id="buttonImagenMath" layoutX="592.0" layoutY="119.0" onAction="#buttonImagenMath" mnemonicParsing="false" text="Generar Imagen" />
+        <Button fx:id="buttonImagenProgra" layoutX="600.0" layoutY="334.0" onAction="#buttonImagenProgra" mnemonicParsing="false" text="Generar Imagen" />
+    </children>
 </AnchorPane>
