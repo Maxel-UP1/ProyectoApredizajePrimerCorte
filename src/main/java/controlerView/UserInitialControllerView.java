@@ -89,18 +89,12 @@ public class UserInitialControllerView {
                             switch (comboBox.getSelectionModel().getSelectedIndex()) {
                                 case 0:
                                     courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 5);
-                                    //getTableView().getItems().get(getIndex()).setInterest(5);
-                                    System.out.println("Muy interesado");
                                     break;
                                 case 1:
                                     courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 3);
-                                    //getTableView().getItems().get(getIndex()).setInterest(3);
-                                    System.out.println("Interesado");
                                     break;
                                 case 2:
                                     courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 1);
-                                    //getTableView().getItems().get(getIndex()).setInterest(1);
-                                    System.out.println("Poco interesado");
                                     break;
                             }
                             // escribir persistencia
@@ -138,15 +132,12 @@ public class UserInitialControllerView {
                             switch (comboBox.getSelectionModel().getSelectedIndex()) {
                                 case 0:
                                     courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 5);
-                                    System.out.println("Muy interesado");
                                     break;
                                 case 1:
                                     courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 3);
-                                    System.out.println("Interesado");
                                     break;
                                 case 2:
                                     courseController.modifyCourseByCourse(getTableView().getItems().get(getIndex()), 1);
-                                    System.out.println("Poco interesado");
                                     break;
                             }
                             // escribir persistencia
@@ -286,19 +277,6 @@ public class UserInitialControllerView {
     public void sendTree(ActionEvent actionEvent) throws IOException{
         updateDataMath();
         updateDataProgramming();
-        //System.out.println(courseController.temp());
-        System.out.println("---------------------------------------------------------------------------------------");
-        courseController.assignCredits();
-
-
-        for(Course course : courseController.getCourseList()) {
-            System.out.println("nombre del curso-->"+course.getName());
-            System.out.println("interes-->"+course.getInterest());
-            System.out.println("creditos-->"+ course.getCredits());
-        }
-        // Implementar funcionalidad para enviar datos
-
-        //llama la nueva ventana
         RouteView routeView = new RouteView(courseController);
         routeView.start(new Stage());
     }

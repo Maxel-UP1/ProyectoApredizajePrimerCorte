@@ -12,7 +12,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Course;
+import utilities.FileStorageUtilities;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class RouteControllerView {
@@ -55,6 +57,9 @@ public class RouteControllerView {
         @FXML
         private Button buttonImagenProgra;
 
+        private FileStorageUtilities fileStorageUtilities = new FileStorageUtilities();
+        private JOptionPane jp = new JOptionPane();
+
         @FXML
         private void initialize() {
                 // Inicializar las columnas
@@ -94,21 +99,28 @@ public class RouteControllerView {
 
         @FXML
         public void goBack(ActionEvent actionEvent) {
-                // Obtener el nodo raíz del evento
                 Node source = (Node) actionEvent.getSource();
-                // Obtener el Stage asociado al nodo raíz
                 Stage stage = (Stage) source.getScene().getWindow();
-                // Cerrar la ventana
                 stage.close();
+
+
         }
 
         @FXML
         public void buttonImagenMath(ActionEvent actionEvent) {
-                courseController.treeMath().prettyPrint();
+                //escribo en el archivo de los arboles de matematcias
+                fileStorageUtilities.writeGrapht("graphMath", courseController.treeMath());
+                //grafica la imagne segun la informacion
+                String Renpods = fileStorageUtilities.drawGrapht(fileStorageUtilities.readDotFile("graphMath"));
+                jp.showMessageDialog(null, Renpods);
+
+
         }
 
         @FXML
         public void buttonImagenProgra(ActionEvent actionEvent) {
-                courseController.treeProgra().prettyPrint();
-        }
+                fileStorageUtilities.writeGrapht("graphProgram", courseController.treeProgra());
+                String Renpods = fileStorageUtilities.drawGrapht(fileStorageUtilities.readDotFile("graphProgram"));
+                jp.showMessageDialog(null, Renpods);
+}
 }
